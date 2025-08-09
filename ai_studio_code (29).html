@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شهادات STAD&TALKS - PharmaSchemes</title>
+    
+    <link rel="icon" type="image/png" href="https://i.ibb.co/3kC6r7c/ps-favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Poppins:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --brand-primary: #F80069;
+            --brand-secondary: #0c1626;
+            --white: #ffffff;
+            --text-primary: #e0e6f0;
+            --text-secondary: #8899ae;
+            --text-muted: #64748b;
+            --bg-primary: #0a0f1a;
+            --bg-secondary: #0c1626;
+            --bg-card: rgba(15, 23, 42, 0.75);
+            --shadow-glow: 0 0 30px rgba(248, 0, 105, 0.25);
+            --transition-base: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --radius-md: 0.75rem;
+            --radius-full: 9999px;
+            --container-padding: 1.5rem;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body {
+            font-family: 'Cairo', sans-serif;
+            color: var(--text-primary);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            cursor: auto;
+            background-color: var(--bg-primary);
+            background-image: 
+                linear-gradient(rgba(10, 15, 26, 0.8), rgba(10, 15, 26, 0.8)),
+                url('https://i.ibb.co/SDJ8bdvc/520476120-704402765900433-3152519614794103959-n.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+        .container { max-width: 1400px; width: 100%; margin: 0 auto; padding: 0 var(--container-padding); }
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 0; background-color: rgba(10, 15, 26, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .navbar .container { display: flex; align-items: center; justify-content: space-between; }
+        .navbar-brand { font-family: 'Poppins', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--white); text-decoration: none; }
+        .navbar-brand span { color: var(--brand-primary); }
+        .main-content { padding: 6rem 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .section-header { text-align: center; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;}
+        .section-title { font-family: 'Poppins', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; margin-bottom: 1rem; background: linear-gradient(135deg, var(--white) 0%, var(--brand-primary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .section-subtitle { font-size: 1.25rem; color: var(--text-secondary); line-height: 1.8; }
+        .search-container { width: 100%; max-width: 700px; margin: 0 auto; text-align: center; padding-top: 60px; }
+        .search-form { display: flex; flex-direction: column; gap: 1.5rem; align-items: center; }
+        .search-input { width: 100%; padding: 1.25rem; background: var(--bg-card); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: var(--radius-md); color: var(--text-primary); font-size: 1.1rem; font-family: 'Cairo', sans-serif; text-align: center; transition: var(--transition-base); }
+        .search-input:focus { border-color: var(--brand-primary); outline: none; }
+        .search-button { display: inline-flex; align-items: center; justify-content: center; gap: 0.75rem; background: linear-gradient(135deg, var(--brand-primary) 0%, #FF3D71 100%); color: var(--white); padding: 1rem 3rem; border-radius: var(--radius-full); font-weight: 700; font-size: 1.125rem; transition: all 0.3s; border: none; cursor: pointer; font-family: 'Cairo', sans-serif; }
+        .search-button:hover { transform: translateY(-5px) scale(1.05); }
+        #results-container { margin-top: 3rem; min-height: 50px; padding: 1rem; }
+        .result-message { color: var(--text-secondary); font-size: 1.1rem; }
+        .certificate-link { display: inline-flex; align-items: center; justify-content: center; gap: 1rem; background: #25D366; color: var(--white); padding: 1rem 2.5rem; border-radius: var(--radius-full); text-decoration: none; font-weight: 700; font-size: 1.25rem; transition: transform 0.3s, box-shadow 0.3s; animation: pulse-glow-success 2s infinite; margin-bottom: 1rem; }
+        .certificate-link:hover { transform: translateY(-5px) scale(1.05); }
+        .certificate-link i { font-size: 1.5rem; }
+        @keyframes pulse-glow-success { 0%, 100% { box-shadow: 0 0 15px rgba(37, 211, 102, 0.5); } 50% { box-shadow: 0 0 30px rgba(37, 211, 102, 0.8); } }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar" id="navbar"><div class="container"><a href="#" class="navbar-brand">Pharma<span>Schemes</span></a></div></nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="search-container">
+                <div class="section-header">
+                    <h1 class="section-title">STAD & TALKS</h1>
+                    <p class="section-subtitle">أهلاً بك. أدخل اسمك كما قمت بالتسجيل للبحث عن شهادتك وتحميلها.</p>
+                </div>
+                <form id="certificate-search-form" class="search-form">
+                    <input type="text" id="name-input" class="search-input" placeholder="اكتب اسمك هنا للبحث..." required>
+                    <button type="submit" id="search-button" class="search-button"><i class="fas fa-search"></i><span>ابحث عن شهادتي</span></button>
+                </form>
+                <div id="results-container"></div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // ===================================================================
+        // ==              قائمة البيانات (الأسماء والروابط)                ==
+        // ===================================================================
+        const certificateData = [
+            { name: "Yasmeen Mostafa", link: "https://drive.google.com/file/d/1eFuLIqWgS_qnQ_cVCuLk2hwmP4nGT2iU/view?usp=drivesdk" },
+            { name: "Logina Ahmed Soliman Rizk Yakoot", link: "https://drive.google.com/file/d/1kzutTj7JwNdMzcUY06lQzBIFL4Vx4zRH/view?usp=drivesdk" },
+            { name: "Al-zahraa Mohamed Hassona", link: "https://drive.google.com/file/d/1NJEXx3oPpDY03Sx7-d5Hgzgfdp82fzMJ/view?usp=drivesdk" },
+            { name: "Aya Mohammed Abdelsattar Nasr", link: "https://drive.google.com/file/d/161qWL7XVR7WbF1NgF956-CkkbXmmIhjK/view?usp=drivesdk" },
+            { name: "Mohamed Mahmoud Soliman", link: "https://drive.google.com/file/d/1zrg0ZEf3XP4ZHXYn9N2qbbJgRB0JpK1o/view?usp=drivesdk" },
+            { name: "Salma Mohamed Younis", link: "https://drive.google.com/file/d/1a4GScYmz57wcE53kKSxkowQlI-Jco1GF/view?usp=drivesdk" },
+            { name: "Jomana Mohamed Elsayed Mohamed", link: "https://drive.google.com/file/d/1SyAoOLTnVdUqORHGnwyRhOZUqwUdNq8R/view?usp=drivesdk" },
+            { name: "Rahma Mohamed Fahmy", link: "https://drive.google.com/file/d/1G6brwYLUzLChIuBr65kbji_CamJgcrNZ/view?usp=drivesdk" },
+            { name: "Eman Amer Ahmed", link: "https://drive.google.com/file/d/1YUbq5Fwfv62Qwhch_hWF45UuRn-dlK2q/view?usp=drivesdk" },
+            { name: "Areege Ayman Elnozahy", link: "https://drive.google.com/file/d/1UIkssHggX8za6pWgwIntgi6Xe_Od08_R/view?usp=drivesdk" },
+            { name: "Dina Aboelwafa Mahmoud", link: "https://drive.google.com/file/d/10thyQ0T4qt509m22AN9EfHW9rKJ1xiO6/view?usp=drivesdk" },
+            { name: "Khaled Abdo Taha", link: "https://drive.google.com/file/d/13IKXY9H5YA9kzvt3I-W6t4yzw5JVXM0H/view?usp=drivesdk" },
+            { name: "Shahd Mostafa Abdelsalam Shaban", link: "https://drive.google.com/file/d/1vjEia_Kt7QzCZjUaaHJtPKk90_tQ3Frs/view?usp=drivesdk" },
+            { name: "Eithar Abdulazim", link: "https://drive.google.com/file/d/1pfhCCbTqb1jc2CVHme1DWuc-Agg1CMS5/view?usp=drivesdk" },
+            { name: "Ola Elhadi Mohamed Ibrahim", link: "https://drive.google.com/file/d/1wKevPftHz1imQfhNVCKSfJO3hazYsx1L/view?usp=drivesdk" },
+            { name: "Ayat Mahmoud Faried", link: "https://drive.google.com/file/d/1i0SxViN3ndT4fCBQacIPm7RpPBy0iE9Q/view?usp=drivesdk" },
+            { name: "Mohamed Mahmoud Khedr", link: "https://drive.google.com/file/d/12aodp4WuG5UPI87A6PrJQbrXbbbZPM-J/view?usp=drivesdk" },
+            { name: "Shahd Mohammed", link: "https://drive.google.com/file/d/1nJIGv6GyuXmNX_M2H8tI_pt4Ur5N_izw/view?usp=drivesdk" },
+            { name: "Sohaila Ayman Elnozahy", link: "https://drive.google.com/file/d/1Gq8TF4EeFdftXVqwONkAea9A2zE9u5X1/view?usp=drivesdk" },
+            { name: "Shourok Yasser Salem", link: "https://drive.google.com/file/d/16tm1DyKDOPUKa16U0J6qBzCU-dq6FU1L/view?usp=drivesdk" },
+            { name: "Nada Mohamed Mostafa", link: "https://drive.google.com/file/d/1FUqXrw6Xl-hM-WUyhd04PDTMBl3ceIP7/view?usp=drivesdk" },
+            { name: "Alaa Abdelhay Mohamed", link: "https://drive.google.com/file/d/1wG4wzBggpPDPmcP3QpPsp03Dp_LQZKLb/view?usp=drivesdk" },
+            { name: "Judy Osama Alouf", link: "https://drive.google.com/file/d/1_vhAp3CZvHulNpLtqpeYVz838fYUnWky/view?usp=drivesdk" },
+            { name: "Mohamed Ashraf Saeed Allam", link: "https://drive.google.com/file/d/15GwARD-0K5adSYyJ6VgKeOn07S8xOO4B/view?usp=drivesdk" },
+            { name: "Tasneem Fadel Taha Khamis", link: "https://drive.google.com/file/d/1ZvWpl3aHlDWE6NZkD2Fc82u7k7NFIRav/view?usp=drivesdk" },
+            { name: "Mennatallah Ahmed Atta", link: "https://drive.google.com/file/d/140FE5jEt1L1QB73X6V53z1C9Y7GZa028/view?usp=drivesdk" },
+            { name: "Doaa Abady Salman", link: "https://drive.google.com/file/d/1f4C14YPgO-EXkFB0_vNIKLQkO3gqIfQK/view?usp=drivesdk" },
+            { name: "Makkah Elsayed Hassan", link: "https://drive.google.com/file/d/1bR3ZAdya4G3hXFnWfIi6LCnZKwRcoD2c/view?usp=drivesdk" },
+            { name: "Reem Ibrahim Motawea", link: "https://drive.google.com/file/d/15wG140VPiSn8JlwnZJ0fBG-YrdgFrM-1/view?usp=drivesdk" },
+            { name: "Salma Ali Khalil", link: "https://drive.google.com/file/d/1WWjEwrc2Agm1hiCB_BqchWjimFwfzwi3/view?usp=drivesdk" },
+            { name: "Ahmed Saudi Abdelrszek Sarhan", link: "https://drive.google.com/file/d/1vmQEvkStoil7ubfRgY-Kz7-eQYp9M8pX/view?usp=drivesdk" },
+            { name: "Aya Gamal", link: "https://drive.google.com/file/d/1cT6ADkKWpSN3_p0rdyr4q_gZU650xTIc/view?usp=drivesdk" },
+            { name: "Rawan Fawzy Mohammed", link: "https://drive.google.com/file/d/1Xgk85Ne1kqCi1yY9v2w_jYPri0MpcUQX/view?usp=drivesdk" },
+            { name: "Nagwa Mohamed", link: "https://drive.google.com/file/d/1B7az5qJJ6I57KmWKU0f9CU2h3jwXMKvy/view?usp=drivesdk" },
+            { name: "Marwa Ahmed Eltayeb", link: "https://drive.google.com/file/d/1TKxWflcdsdl4wHDNIp8-FqwI3B798CFp/view?usp=drivesdk" },
+            { name: "Mariam Ahmed Helmy", link: "https://drive.google.com/file/d/1ekqWsMmZYLL6jkjkM-cFXg7CALkM42qV/view?usp=drivesdk" },
+            { name: "Nouran Mostafa Mohammed", link: "https://drive.google.com/file/d/10KibfOTSx6jIcVA2Gkvw5syfIXCvcXmX/view?usp=drivesdk" },
+            { name: "Eslam Saad Abdelmoetey Ahmed", link: "https://drive.google.com/file/d/1Ly-E662633IkIerIARatzZC8VI3EUmts/view?usp=drivesdk" },
+            { name: "Hadeer Abady Hassan", link: "https://drive.google.com/file/d/1LGEIVC1TER21WRl4T-dU75YIP0tDloRi/view?usp=drivesdk" },
+            { name: "Esraa Saleh Hassan", link: "https://drive.google.com/file/d/1FTmKdq-LDq6W_sQjdql19DN7sHmof9x5/view?usp=drivesdk" },
+            { name: "Habiba Ali Mohamed Ali", link: "https://drive.google.com/file/d/1zbexz_QMdGqXor17dOaESZIxhUWzPE14/view?usp=drivesdk" },
+            { name: "Esraa Alaa Ahmed Mohammed", link: "https://drive.google.com/file/d/1qCVgARy3kdVc4OEg9Tlrlb-VBShJrrve/view?usp=drivesdk" },
+            { name: "Mohamed Hassan Emara", link: "https://drive.google.com/file/d/1VrbUFyInnnKCdnSItjo0iVz0v1AjL7dU/view?usp=drivesdk" },
+            { name: "Mohamed Anas Mohamed", link: "https://drive.google.com/file/d/1Y8THA4oq5VrFtPkJjH-ae-A5TTfVtdG_/view?usp=drivesdk" },
+            { name: "Marwa Atef Salama", link: "https://drive.google.com/file/d/1oCw5Vd88GW8eJj_r8yBk9q3qi0q9Do0D/view?usp=drivesdk" },
+            { name: "Shimaa Hamdy Gomaa", link: "https://drive.google.com/file/d/17U6wMtYABP5gqPRAh8UzSmyckK5LntsG/view?usp=drivesdk" },
+            { name: "Ragaa Labaan William Mhani", link: "https://drive.google.com/file/d/1kpKIKfhUmExTg4el2xILFrk-MQJySCiY/view?usp=drivesdk" },
+            { name: "Tassneem Ayman Ahmad Shaker", link: "https://drive.google.com/file/d/1bpda042SLmAw0a_7kt9o9xt-5zgtgSxG/view?usp=drivesdk" },
+            { name: "Nada Ibrahim Sakr", link: "https://drive.google.com/file/d/1s8GtTZuJzveBkKVecSMIo6UsTW7y9M8V/view?usp=drivesdk" },
+            { name: "Basma Ahmed Hamdi", link: "https://drive.google.com/file/d/1zLDlqetpDz9ifU85qfZdg1bFrLYxsp2n/view?usp=drivesdk" },
+            { name: "Nourhan Samir Abodeif", link: "https://drive.google.com/file/d/1BTNTr9R3T_M0a2eUY-L1mUMOak4Nzldr/view?usp=drivesdk" },
+            { name: "Zeina Mohamed Hamed Ali", link: "https://drive.google.com/file/d/1mYMylFtlnsUESsnqRoQdkavG6XdsLmBC/view?usp=drivesdk" },
+            { name: "Mohamed Hamada Hassan", link: "https://drive.google.com/file/d/1I7AkBtnjzoHligcAbSbQr946teijGZgg/view?usp=drivesdk" },
+            { name: "Aya Ashraf Mohamed", link: "https://drive.google.com/file/d/1kZ36uZrMmcg23YcEB_Mg8qHsxO-ZnI-o/view?usp=drivesdk" },
+            { name: "Yassmine Ahmed Zakaria Ahmed", link: "https://drive.google.com/file/d/1o58WbWZT_gxAOqPbz386UdcT2hf_rk8D/view?usp=drivesdk" },
+            { name: "Rita Ossama Raouf", link: "https://drive.google.com/file/d/1C9ecmGW4kg73ojznVp9wfeLUlHotVJnj/view?usp=drivesdk" },
+            { name: "Asmaa Saad Ahmed", link: "https://drive.google.com/file/d/14R3F0st0fhUj2VhmtCI-fTSPUBpzq3Ec/view?usp=drivesdk" },
+            { name: "Marina Abdo Sefein", link: "https://drive.google.com/file/d/1uCQD1KuzayxBZWAPd8Ja7EEo9rK_Wj_z/view?usp=drivesdk" },
+            { name: "Yousif Basim Hilal", link: "https://drive.google.com/file/d/1Ozq-ZJ_5Zi87Lnqxemxbj2TbdqucDXxI/view?usp=drivesdk" },
+            { name: "Esraa Mohamed Kamel", link: "https://drive.google.com/file/d/185Sn6wpIltx27oaXE6tozAq0fbr-0ZPl/view?usp=drivesdk" },
+            { name: "Shimaa Mohamed Haroun", link: "https://drive.google.com/file/d/1W2Wih9bkCBJpWRghQGXvoCFBNPOZZORO/view?usp=drivesdk" },
+            { name: "Mai Khaled", link: "https://drive.google.com/file/d/1XKV2798Nk3Ck7FD8mokbh5ak0wmycAgy/view?usp=drivesdk" },
+            { name: "Wafaa Werdany Kareem", link: "https://drive.google.com/file/d/1Hx--ESaBIN53YQDOqAybYQCT34q-kQHZ/view?usp=drivesdk" },
+            { name: "Eman Mohamed Ahmed Kebaish", link: "https://drive.google.com/file/d/1DXuF2ZVOSCyfisHpvoAoUOab1O4IZq_h/view?usp=drivesdk" },
+            { name: "Yasmin Gamal Aboraya", link: "https://drive.google.com/file/d/135uNS2Mbw7f5daJ8wqi9gkEDDTchS3zt/view?usp=drivesdk" },
+            { name: "Ahmed Ali Farag Elawady", link: "https://drive.google.com/file/d/172oOGJDCogqnqfJl13CJk3aZWcr-Ts_x/view?usp=drivesdk" },
+            { name: "Fatma Atef Ahmed", link: "https://drive.google.com/file/d/1yMv-YBox9-kGIf3ue3qnma-Zw63hRraZ/view?usp=drivesdk" },
+            { name: "Rania Fathy Hamed", link: "https://drive.google.com/file/d/18terf2itxOzEYgDJSujFG0Qsq0LSut-z/view?usp=drivesdk" },
+            { name: "Kasem Mohamed Ahmed", link: "https://drive.google.com/file/d/1fEbycNd4yDXuEbWUGc2kVAI_7vWmO5Tq/view?usp=drivesdk" },
+            { name: "Aya Allah Al Khudary", link: "https://drive.google.com/file/d/19QawFd290X2Jq9dsZZI0eSN6Lt3vTtEm/view?usp=drivesdk" },
+            { name: "Basmala Hisham Bayouimy", link: "https://drive.google.com/file/d/1h844t8aX9WCnTEhQuRVtu8ehca5Ub_kR/view?usp=drivesdk" },
+            { name: "Hend Salama Shaheen", link: "https://drive.google.com/file/d/1DrZCmzQeFXziXMwA21KMMuI1dVPNo1h9/view?usp=drivesdk" },
+            { name: "Amal Mahmoud Mohmmed", link: "https://drive.google.com/file/d/1nQbjZ6olNYtVFW5hmiPDRjiWzkEQqL7P/view?usp=drivesdk" },
+            { name: "Lamiaa Alaa Abu Shady", link: "https://drive.google.com/file/d/1XD8ThzmmcA61HmCCnHbj40nHwypXHiRN/view?usp=drivesdk" },
+            { name: "Maryam Mahmoud Ismail", link: "https://drive.google.com/file/d/1ZaX_GMxWmS01zZAgPRcHZm-T0XmlhzM7/view?usp=drivesdk" },
+            { name: "Hanin Yasser", link: "https://drive.google.com/file/d/1nSF9DkMpCSx6U7u_7gx7OkZ5resKwOeE/view?usp=drivesdk" },
+            { name: "Asmaa Hamdy Mahmoud", link: "https://drive.google.com/file/d/1iXob-cIbooQLg3lo-srkgd2e_dZLSIJw/view?usp=drivesdk" },
+            { name: "Noureen Waled Hamad Raslan", link: "https://drive.google.com/file/d/1X7A3t40kMztR3mnXMIvNoNJPMzw2jOOu/view?usp=drivesdk" },
+            { name: "Shada Ali Mohammed", link: "https://drive.google.com/file/d/1PWt3LnWEH7mxNf51JdJoV74eZzfq3EFN/view?usp=drivesdk" },
+            { name: "Menna Allah Emad Eid", link: "https://drive.google.com/file/d/1TRyRN0xExpzDoA9QudD3CrKkIG3PxESb/view?usp=drivesdk" },
+            { name: "Sondos Mohamed Amin Elromy", link: "https://drive.google.com/file/d/1QuQlLBpljbB4iHd0JeC8A91B5BzKIzLu/view?usp=drivesdk" },
+            { name: "Omnia Mohamed Abd El-hai", link: "https://drive.google.com/file/d/1ERvJuVhD668jd3UaOigDNupw5pxkKjpK/view?usp=drivesdk" },
+            { name: "Renad Sameh Ali", link: "https://drive.google.com/file/d/1JBCVyPwwkWavwUym8I9YlG-HMEvQsW0x/view?usp=drivesdk" },
+            { name: "Mariam Tamer Abdelbasset Hassan Adss", link: "https://drive.google.com/file/d/1cclDUglxCpPT8V818nKzE-VgTOBc5CJU/view?usp=drivesdk" },
+            { name: "Aya Mohamed Abdelmoneim", link: "https://drive.google.com/file/d/1TwA9qg8tAh9sXreEZp-Mrftj1UgbY8M1/view?usp=drivesdk" },
+            { name: "Mennatallah Allam Mohamed Noah", link: "https://drive.google.com/file/d/190xlLgHdpuUmfroLSNZh6sxGXw6hlE9_/view?usp=drivesdk" },
+            { name: "Rawan Alaa Hegazy", link: "https://drive.google.com/file/d/1ksooLU6-UJJpiu4XMCAu1q3ZJYk04TNE/view?usp=drivesdk" },
+            { name: "Salma Yasser Salah", link: "https://drive.google.com/file/d/1uJ_iYNPVM8yRIb7SYd_URqMspVTcOrJP/view?usp=drivesdk" },
+            { name: "Israa Zakareya Abdo", link: "https://drive.google.com/file/d/1hBathD1XxozgAHoRgZGxWSOcA5RXRzzA/view?usp=drivesdk" },
+            { name: "Remonda Samy Henien", link: "https://drive.google.com/file/d/1fXU3W2j-ORuyFcmiy1bLdaVlYBKOCWYd/view?usp=drivesdk" },
+            { name: "Zeina Ahmed", link: "https://drive.google.com/file/d/18QZP-7v73KAVQtgT56QSHkz6E7nlMm0j/view?usp=drivesdk" },
+            { name: "Sama Yasser Elsayed Abdullah", link: "https://drive.google.com/file/d/1EKJ--eagM05ENM6oiycIqD8-iVVB6zyy/view?usp=drivesdk" },
+            { name: "Hager Mohamed", link: "https://drive.google.com/file/d/1qGALHbwD6TudoDr5vUdjIXjpMG672AiO/view?usp=drivesdk" },
+            { name: "Yara Sameh Ebrahim", link: "https://drive.google.com/file/d/1D2fdwhFNKXlrtfvXDsTKXOHe1BjLQUhV/view?usp=drivesdk" },
+            { name: "Yasmeen Mostafa Mohamed Ali", link: "https://drive.google.com/file/d/13ShjEYRG4442wixigdBlx3iIuCt2uQht/view?usp=drivesdk" },
+            { name: "Ahmed Islam", link: "https://drive.google.com/file/d/10cxgtgimU7bS4BFuRlfD0GrhpoW2thuO/view?usp=drivesdk" },
+            { name: "Sohila Refaat Abdelaziem", link: "https://drive.google.com/file/d/1P7iBrQVSFh2bdci4XgwAZqYbxxq0PmG5/view?usp=drivesdk" },
+            { name: "Yara Mahmoud Ahmed Zead", link: "https://drive.google.com/file/d/1T_oVhxbupjC-uxSzBL4IR0X8LwEOEB7q/view?usp=drivesdk" },
+            { name: "Bahia Fathy Faid", link: "https://drive.google.com/file/d/1YSWWICsmhKu0QkFpR4fLaFKiFSd__S-n/view?usp=drivesdk" },
+            { name: "Omnia Mahmoud Ibrahim", link: "https://drive.google.com/file/d/1-eXkm1sRwwwoSdh9TgTUoL2sozPRvqP9/view?usp=drivesdk" },
+            { name: "Hoor Hasann Mohamed", link: "https://drive.google.com/file/d/1_9nFf3jzFOdjVQFokbfuAniHECuZ578T/view?usp=drivesdk" },
+            { name: "Salma Essam", link: "https://drive.google.com/file/d/1jDi06ZHGmwcqGfMdQXemeHk0MR4SpPuK/view?usp=drivesdk" },
+            { name: "Malak Ibrahim", link: "https://drive.google.com/file/d/1dgyGlXKSgPxfe01NqHJQIXCd5EGWlBPc/view?usp=drivesdk" },
+            { name: "Arwa Saad Elsanousy", link: "https://drive.google.com/file/d/1EZo4xL3gZ8XFQv87OwAXGdY7CA9HUlr0/view?usp=drivesdk" },
+            { name: "Clara Atef Wasef", link: "https://drive.google.com/file/d/13VA-kgpmJxHuoF7qWyrqMUKEm1OdMBFr/view?usp=drivesdk" },
+            { name: "Naissm Hossam Mohamed", link: "https://drive.google.com/file/d/1KjARkt-QRWj_TLz0TYwsg7NiOFzR5MfJ/view?usp=drivesdk" },
+            { name: "Farah Osama", link: "https://drive.google.com/file/d/1Q0etNNw0paRatiUfMC267DaT0tpwz65N/view?usp=drivesdk" },
+            { name: "Arwa Hassani Mohamed Nour", link: "https://drive.google.com/file/d/1m8qV82ZYRNmnIu8UkxU7I8stt8Ibt0CO/view?usp=drivesdk" },
+            { name: "Hana Wael Farouk Abdelwahab", link: "https://drive.google.com/file/d/19jBmyriDkko4dOuknAVVruKPqpk6PX0J/view?usp=drivesdk" },
+            { name: "Rawan Mohamed Kamal", link: "https://drive.google.com/file/d/1y2No79eJywJ7mP0q8H7_DisV383PGGus/view?usp=drivesdk" },
+            { name: "Sohaila Ramadan El Sayed", link: "https://drive.google.com/file/d/1peyG6CwMpPJJy_DxCiQIglizriAMkOQn/view?usp=drivesdk" },
+            { name: "Maher Fayz Shafeek", link: "https://drive.google.com/file/d/1WbAJIyse4VcA7gGO9_VbMQQUbzh5TEHq/view?usp=drivesdk" },
+            { name: "Ihab Galal Mohamed", link: "https://drive.google.com/file/d/1iDYjqsUAyQlZAqP-JN9Zkqkey_kydcuY/view?usp=drivesdk" },
+            { name: "Ahmed Shibat Saad", link: "https://drive.google.com/file/d/1usR-ypaKg1lAxRoTtUmZS1vfjDq52Swm/view?usp=drivesdk" },
+            { name: "Ebrahim Ayman Ali Aboagour", link: "https://drive.google.com/file/d/1dmC_1fUyw7fKeq1Naf-byi8p9McRSBc8/view?usp=drivesdk" },
+            { name: "Latifa Youssif Ibrahim", link: "https://drive.google.com/file/d/1we_E9J5a_nBbkO8fBZOjdsuaFKGwXNps/view?usp=drivesdk" },
+            { name: "Ahmed Ali Elshamy", link: "https://drive.google.com/file/d/13q2HttHdsQErT1u-xdzkfDBuR3Hiisvi/view?usp=drivesdk" },
+            { name: "Serage Bahaa Saleh", link: "https://drive.google.com/file/d/1nnH6QHcrCEGd0l2MWpYxnvPgQ_WEqUMp/view?usp=drivesdk" },
+            { name: "Asmaa Moustafa Awad", link: "https://drive.google.com/file/d/1o7fwwxp5bA-0H1Wg-WhOi3O4HbrmxwHV/view?usp=drivesdk" },
+            { name: "Malak Khaled Abd El-fatah", link: "https://drive.google.com/file/d/1ais3wKq_ag3UmPXSHmzwY8msKtLaTJ2A/view?usp=drivesdk" },
+            { name: "Osama Mohamed Abdelghffar", link: "https://drive.google.com/file/d/1t0RHR0y0F37y88voeS96KS4B3CD0AZbm/view?usp=drivesdk" },
+            { name: "Abdelrahman Mahrous Abdelrahman", link: "https://drive.google.com/file/d/1k1fth40kwIbpf-uscrNjMCTTogI7bUoS/view?usp=drivesdk" },
+            { name: "Mohamed Saad Abdallah", link: "https://drive.google.com/file/d/1sx_boT-NOpNt6WBd0b7s8-3CK5cV63v5/view?usp=drivesdk" },
+            { name: "Asmaa Abd Elrahem Abd Elghany", link: "https://drive.google.com/file/d/1-JLeEbp9Po_Hk4xm3BjlztXu1VLhhL7M/view?usp=drivesdk" },
+            { name: "Heba Mahmoud Mohamed", link: "https://drive.google.com/file/d/1e2rv7IY9PiS4X6AY0ou0JWWlwkwjnFkm/view?usp=drivesdk" },
+            { name: "Mariam Mossad Gala", link: "https://drive.google.com/file/d/147sp2EkusW6FBYKh_XXq4earl5D_RCYe/view?usp=drivesdk" },
+            { name: "Rana Khaled'", link: "https://drive.google.com/file/d/1h_5mEwZQ8nCGufPaRRAiIXyTE415M9_8/view?usp=drivesdk" },
+            { name: "Abdelrhman Reda Nasef", link: "https://drive.google.com/file/d/19h9K0TUiq1NuT8x26RP1wsCuukGasmp1/view?usp=drivesdk" },
+            { name: "Sara Mohsen Elsaka", link: "https://drive.google.com/file/d/19QdRmxqwVHLkydFdeENngof0hoOhFATU/view?usp=drivesdk" },
+            { name: "Abdelraheem Eid", link: "https://drive.google.com/file/d/1jQd_rBHSn9WHY3wWQcvczSCquHj-LXJT/view?usp=drivesdk" },
+            { name: "Omnia Mohamed", link: "https://drive.google.com/file/d/1TtfkZ9mFH75HVCPFywp8_dfEHLO9xESr/view?usp=drivesdk" },
+            { name: "Alaa Araby Elhetety", link: "https://drive.google.com/file/d/1S7a6d_asWUl2om9RxsaMX23qf7TXTKCY/view?usp=drivesdk" },
+            { name: "Tasneem Shiref Gamal Mahmoud", link: "https://drive.google.com/file/d/1VNo_G7PrGAeRgM6ynIVE5hMWmdEUL2aL/view?usp=drivesdk" },
+            { name: "A'laa Gamal Ali Mosalem", link: "https://drive.google.com/file/d/1SqQgZvr8IQNYDI_8I1HuJ9IIyXpu898Z/view?usp=drivesdk" },
+            { name: "Mohamed Sabry Mohamed", link: "https://drive.google.com/file/d/1zEFoJiCxKHJMGrnU2hng9HVR-mfqK_I7/view?usp=drivesdk" },
+            { name: "Menna Elazbkawy", link: "https://drive.google.com/file/d/1dxu75sHObsdnlZ7KeisDYh7G0tuMl3A8/view?usp=drivesdk" },
+            { name: "Eman Elkahlawy Fathy", link: "https://drive.google.com/file/d/106IjXF8VyUdZBzH3N5-dkKkYwsLhg4-l/view?usp=drivesdk" },
+            { name: "Mohamed Saber Sayed", link: "https://drive.google.com/file/d/136AUHd6o-J270bIB2Dz_ucHTrj-aYf_Q/view?usp=drivesdk" },
+            { name: "Mohamed Fared Hemada", link: "https://drive.google.com/file/d/1xbbJr3SSHURy6S3WH-9a0T3RXwq7jILI/view?usp=drivesdk" },
+            { name: "Flouraj Ayman Mahmood", link: "https://drive.google.com/file/d/1lRaSJ5gieuI9dl1fNdG4HjA8wjMxV224/view?usp=drivesdk" },
+            { name: "Khalid Hisham Mahmoud Abdelsalam", link: "https://drive.google.com/file/d/1zLo6tY_9lAVzahV6QoIfHcACq8481mLg/view?usp=drivesdk" },
+            { name: "Safia Asaad Abd Allah", link: "https://drive.google.com/file/d/1Rtlz78V-w1eA9-7oQdnUDY3SM_CH1uKB/view?usp=drivesdk" },
+            { name: "Mostafa Ahmed Awad Mohamed", link: "https://drive.google.com/file/d/1fIWMGCkiNd3v8_90qaiAexByeOVo6v75/view?usp=drivesdk" },
+            { name: "Fatma Salah Abo Sho Sha", link: "https://drive.google.com/file/d/1if4V3Wlbq7LSz0ZueC0TiH7rcgkJTuoR/view?usp=drivesdk" },
+            { name: "Julia Barsoom Shehata", link: "https://drive.google.com/file/d/1Z05hWCgz96EiWEaTvrPU3hJPtNEL9zgN/view?usp=drivesdk" },
+            { name: "Basant Ali Abdelrahman", link: "https://drive.google.com/file/d/1qaXrdaSPqWBXtWsUApJMYst150Q8OHRv/view?usp=drivesdk" },
+            { name: "Amany Kamel Mohamed Salem", link: "https://drive.google.com/file/d/1vfOGNk4HEe2WqXGmJLHrkz-i89yham5F/view?usp=drivesdk" },
+            { name: "Aya Waleed Mohamed Rizk", link: "https://drive.google.com/file/d/1M6EmgL-ixyYVSHPpp0GXeQJ4OSET5CvC/view?usp=drivesdk" },
+            { name: "Rewan Khaled", link: "https://drive.google.com/file/d/198-XO8IEPHrDTdy1pfeWYaq7ETWZEYhX/view?usp=drivesdk" },
+            { name: "Hager Mohamed Selim", link: "https://drive.google.com/file/d/1Fkpamf_uLn746Pcn3o3hpflXYWPIkWfy/view?usp=drivesdk" },
+            { name: "Yousef Mohamed Abdelsabour", link: "https://drive.google.com/file/d/1QrLS3MeLn3j_hFrFLNxWqmMq_31dZ4hk/view?usp=drivesdk" },
+            { name: "Moaaz Mohamed Anwer", link: "https://drive.google.com/file/d/17-B5xyRAqgVcYCDfDSk3u7qdIktYgFNb/view?usp=drivesdk" },
+            { name: "Menna Allah Mahmoud Mohamed Abozaid", link: "https://drive.google.com/file/d/1ZZs-db-51WCBgMXPB2i1Ar9r-jElKp5v/view?usp=drivesdk" },
+            { name: "Esraa Sobhi Al-alkamy", link: "https://drive.google.com/file/d/1QRdwPafFAC7cp5-YY3xhoGLGydUWLlBL/view?usp=drivesdk" },
+            { name: "Lamia Nagy Hassan Mohammed", link: "https://drive.google.com/file/d/1Gfaqejb_C5ymfllgdztn7uuc-rlFOUBN/view?usp=drivesdk" },
+            { name: "Shahd Rabee Elsokary", link: "https://drive.google.com/file/d/1RDC1jRxGF-chVVExtKIrdif-FldizFND/view?usp=drivesdk" },
+            { name: "Ahmed Abdelhamid Metwally", link: "https://drive.google.com/file/d/1COB0oy6nwFaWIsHo1aLq6ociwkiiHtTL/view?usp=drivesdk" },
+            { name: "Yasmein Hatem Mahmoud", link: "https://drive.google.com/file/d/13pBhBTcAJbbwMWNeNaP6iSMac1_JkYJR/view?usp=drivesdk" },
+            { name: "Gehad Safwat Mohamed", link: "https://drive.google.com/file/d/1a068dv3_EliDdmDpvmxiL-p1TU9-5lL5/view?usp=drivesdk" },
+            { name: "Mahmoud Mohamed Awaad", link: "https://drive.google.com/file/d/1ebEzazHGTQecbG_1VgztFYg7R8t8MUEa/view?usp=drivesdk" },
+            { name: "Nada Kamal Elgayar", link: "https://drive.google.com/file/d/1U7BhVp_6638WyrsnTh_kGQD8DPLODTPJ/view?usp=drivesdk" },
+            { name: "Youstena Dawood Behniam", link: "https://drive.google.com/file/d/17eC3Qt0wrNPRz2gHWE5aOFoIRVAk4V5k/view?usp=drivesdk" },
+            { name: "Hoda Elsayed Gomaa", link: "https://drive.google.com/file/d/1K8h0cmJ_KyRTk0XhXuD2dyQMLHEyZalG/view?usp=drivesdk" },
+            { name: "Hind Galal", link: "https://drive.google.com/file/d/1zt_Q8PHELJxc6fgPs5Kse_dM7b11eLtF/view?usp=drivesdk" },
+            { name: "Nada Mohamed Mahamoud Shaker", link: "https://drive.google.com/file/d/1tLv6UZbsjqXhs0-nLNd5JZlbk8ZqKN98/view?usp=drivesdk" },
+            { name: "Tasabeeh Gamal Mohamed Afify Kotp", link: "https://drive.google.com/file/d/1z0CzIKLUP2cxlWDUDMYjGBymQxcRccAE/view?usp=drivesdk" },
+            { name: "Nada Amr Yahya Mohamed", link: "https://drive.google.com/file/d/1P5NOiH7S3Vb1CjISJrfSkXWtjPaT8n0s/view?usp=drivesdk" },
+            { name: "Yussif Mohammed Abd Almotaal", link: "https://drive.google.com/file/d/1_1Y8HHh4IW-5H_mEpVFcE8Zur90dyBGD/view?usp=drivesdk" },
+            { name: "Amira Mohamed Fahim", link: "https://drive.google.com/file/d/1dFVoeHzVhs-yis6ELyQ_13_H4kN9z0Pp/view?usp=drivesdk" },
+            { name: "Nancy Mohamed Abdelmaksoud", link: "https://drive.google.com/file/d/12XhGXgheRUhzUix66jxGRG9rWlOhAfJQ/view?usp=drivesdk" },
+            { name: "Taha Mohamed Zanatir", link: "https://drive.google.com/file/d/1TtJvhyw8lL-b_VymtHixiU0GzS8-mXr5/view?usp=drivesdk" },
+            { name: "Nada Gamal Ghoniem", link: "https://drive.google.com/file/d/1VQStbYSu4ARvCjHElsIIqHN_waHeu5Gu/view?usp=drivesdk" },
+            { name: "Kerollos Emad Nady", link: "https://drive.google.com/file/d/1m6HN1plsLzzAhlifmTyaGbUsF4JhaUQm/view?usp=drivesdk" },
+            { name: "Hager Khalid Ibrahim Ahmed", link: "https://drive.google.com/file/d/1K8u7uPfKfDlsVquYJPMXYA1DV1IT_pu2/view?usp=drivesdk" },
+            { name: "Nada Walid", link: "https://drive.google.com/file/d/1fgXkP8hQkitUccS14y2XTOxR9cDPSdQ0/view?usp=drivesdk" },
+            { name: "Rawan Sherif Abdelfattah", link: "https://drive.google.com/file/d/17IrXXR_qatkXdAvxbp26cc6VP8gmk62X/view?usp=drivesdk" },
+            { name: "Aya Elsayed Ali Mostafa", link: "https://drive.google.com/file/d/1s-6shx5Se-cSyDaewZiEKc12Qd17594S/view?usp=drivesdk" },
+            { name: "Altayeb Mohamed Ahmed", link: "https://drive.google.com/file/d/14YpGwNoCzeDBHHI_0L_fTjT6bpA8KCNN/view?usp=drivesdk" },
+            { name: "Shimaa Waleed Fawzy", link: "https://drive.google.com/file/d/1RbHgoV9pbYRTLwdOIhkFulSpbIgSew4t/view?usp=drivesdk" },
+            { name: "Mostafa Ragab Abdellatif", link: "https://drive.google.com/file/d/1Y30eRlGINupshjZ0smgOcvBnY4-q-86t/view?usp=drivesdk" },
+            { name: "Shahd Wael Attiat Allah", link: "https://drive.google.com/file/d/1eXSU7gVKowaHU8BKqUr51e30UMvnX6s8/view?usp=drivesdk" },
+            { name: "Mahmoud Mohamed Fathy", link: "https://drive.google.com/file/d/180T_XCJbl38TROOI03YgmpQw34Kh8OC3/view?usp=drivesdk" },
+            { name: "Mahmoud Gamal Abdelgelil Mohamed Elsayed", link: "https://drive.google.com/file/d/1xo7opvx6QjrYxET66bDnxmbaDVqT_48G/view?usp=drivesdk" },
+            { name: "Eman Amr Attia Mohamed Shata", link: "https://drive.google.com/file/d/1y2iLQ81gd1xfmK2QHJieq6KW1OeiYtY9/view?usp=drivesdk" },
+            { name: "Mary Ayman Fathy", link: "https://drive.google.com/file/d/1d87ZernHa0VKAcHcDmgWsC9HyvS-wVjy/view?usp=drivesdk" },
+            { name: "Amera Mohammed Mariey", link: "https://drive.google.com/file/d/14lM41hAbSwYaqIyGYbH1CFa0w-lmsm-t/view?usp=drivesdk" },
+            { name: "Mayar Ali Abdelaal", link: "https://drive.google.com/file/d/1iyxEr-YLUBjU4nmobTmW2STVfuYt0GV2/view?usp=drivesdk" },
+            { name: "Nihal Gehad Fathy", link: "https://drive.google.com/file/d/192eL6Nt_3mNFXNMETtadafRi5fd3_5oI/view?usp=drivesdk" },
+            { name: "Sohaila Abdelmoaty Abdeldayem", link: "https://drive.google.com/file/d/1Nt8JbEHeJzTtGRagh7xMlEzFvocrY8e9/view?usp=drivesdk" },
+            { name: "Mariam Mahmoud Elkassas", link: "https://drive.google.com/file/d/1edww4i0zSlq9zoDmne_KphytR39hwhTp/view?usp=drivesdk" },
+            { name: "Youssef Walid Mohamed Abd El Hamid El Dakhakhny", link: "https://drive.google.com/file/d/1jhwxwgQ4wcL4STkWwgUiHCtqXkZoytuL/view?usp=drivesdk" },
+            { name: "Khloud Salah Mosa", link: "https://drive.google.com/file/d/1UHf-Xk5FyzSGkPzS41jSid6yvJPzHYbI/view?usp=drivesdk" },
+            { name: "Hadeer Atef", link: "https://drive.google.com/file/d/1AN-VLWh-NyoxzYKUFDnuoshzqcnaQbk-/view?usp=drivesdk" },
+            { name: "Shahd Atef Ayad", link: "https://drive.google.com/file/d/1fHTFzacdjxR_pItjgnOcFZ8Xn1k50zxA/view?usp=drivesdk" },
+            { name: "Doha Ezzat Mohamed Abdel-fattah", link: "https://drive.google.com/file/d/1O5bR6xKoMFIpQOjZTavkLhenglCVIK0e/view?usp=drivesdk" },
+            { name: "Noureen Aboelnasr", link: "https://drive.google.com/file/d/1DvamKzTWwpMUSTekiO_yrqB9RdIQTu-H/view?usp=drivesdk" },
+            { name: "Norhan Yasser Atia", link: "https://drive.google.com/file/d/1ifNJ0OuPgxqBCtUMeAlobMqFVXPsJbJ5/view?usp=drivesdk" },
+            { name: "Ahmed Salheen Sayed", link: "https://drive.google.com/file/d/1reHWy0YGo4d3DCYVL49jZA6NcUE0TKC3/view?usp=drivesdk" },
+            { name: "Mahmoud Mohamed Ali Younes", link: "https://drive.google.com/file/d/1ENd_bE4R4E9ycAe7G5BimbRXRr3EwUnF/view?usp=drivesdk" },
+            { name: "Nourhan Khaled Mahrous", link: "https://drive.google.com/file/d/1dWtOe8_1Bt9n06fPJB4hM3wEnP1kIvmg/view?usp=drivesdk" },
+            { name: "Aya Esmail Abdelmoneam Elfeky", link: "https://drive.google.com/file/d/1GJp3SjCWQJjTgHQrl-j_S_JcrAB0az60/view?usp=drivesdk" },
+            { name: "Mennatullah Omar Madkour", link: "https://drive.google.com/file/d/1W2OwKSvMFyT9eN867EAJ8U8hSeYqCiEn/view?usp=drivesdk" },
+            { name: "Maha Yasser Mohsen", link: "https://drive.google.com/file/d/13C1LjVgL6ytFXLQeWn4sYkJKZgrmhQSH/view?usp=drivesdk" },
+            { name: "Nermeen Fathallah Labban", link: "https://drive.google.com/file/d/1iPT2xKs_CkdVBlO8eSZemMoO3OcRB8T2/view?usp=drivesdk" },
+            { name: "Mohamed Ali Elfiky", link: "https://drive.google.com/file/d/1YsbRp0trkLq7C-n9rDlrt_marOT9qUsk/view?usp=drivesdk" },
+            { name: "Nada Atef Elsayed Elnajjar", link: "https://drive.google.com/file/d/1pJmIke-z2SNH6QkznD2Fw8hxfd-bayhZ/view?usp=drivesdk" },
+            { name: "Amira Ali Hamed Elbadry", link: "https://drive.google.com/file/d/1uNkbiTgNohzsK2ZrMouxOfWTOwQLsT8A/view?usp=drivesdk" },
+            { name: "Youssef Melad Ladid", link: "https://drive.google.com/file/d/1xI8GbET6nOUK1xIH8OI6kxl6iKDtYfE1/view?usp=drivesdk" },
+            { name: "Shahd Mohamed Elbatea", link: "https://drive.google.com/file/d/1jw6zwSNiPX8MVEpi3HpHtcFTF-RoUFZp/view?usp=drivesdk" },
+            { name: "Nermeen Abdelfatah Elsayed", link: "https://drive.google.com/file/d/13uUk-mvfsdHbhuGZr6Xg__Ak4zbPwMmq/view?usp=drivesdk" },
+            { name: "Farh Hossam", link: "https://drive.google.com/file/d/1slbIsGh1gcfUh9CLNGq4kuhjJ0zy-GnV/view?usp=drivesdk" },
+            { name: "Asmaa Elsayed Mostafa", link: "https://drive.google.com/file/d/1eHJqyMJ_DoXlSqOkH6KIod1VDZ7xaTXu/view?usp=drivesdk" },
+            { name: "Abdelrahman Abobaker Elkattan", link: "https://drive.google.com/file/d/1570w0vx49ElrgKICMkravwLJiR_oKwnH/view?usp=drivesdk" },
+            { name: "Shahd Mohamed Abd Elsadek", link: "https://drive.google.com/file/d/1ABe-WEgivwkG-DvYXwEFCG2Nc0nPf83o/view?usp=drivesdk" },
+            { name: "Hisham Mohamed Shaban Mahmoud", link: "https://drive.google.com/file/d/1K1sDQH37XEy8FnREDmwkOV3RjjR0ZqX-/view?usp=drivesdk" },
+            { name: "Rawan Ashraf Moneir", link: "https://drive.google.com/file/d/1PBB8yzrtkIrlNgLnOZ0EzTvrn_SgEGiX/view?usp=drivesdk" },
+            { name: "Jessica Ehab Nageh", link: "https://drive.google.com/file/d/1NY9-grLLyMxb4Q-766alTQBHH-9-VL2a/view?usp=drivesdk" },
+            { name: "Menna T-allah Abu El Fetouh", link: "https://drive.google.com/file/d/1x3UMNsx6h0UQLnbpNnPYJbwa8BZ-MfKH/view?usp=drivesdk" },
+            { name: "Silvya Atef", link: "https://drive.google.com/file/d/1jm7lWNspyrLZ0ZmtNdsBs96bkhj538KS/view?usp=drivesdk" },
+            { name: "Mariam Mohamed", link: "https://drive.google.com/file/d/1qU6QfxWbxqLK8rvUqCMtSmo111iW3S_j/view?usp=drivesdk" },
+            { name: "Moataz Ahmed Hamdy", link: "https://drive.google.com/file/d/1WTN3QrckiZpi7FdCCF7I_JT3HbC6aW8p/view?usp=drivesdk" },
+            { name: "Menna Allah Tamer Abdelazem", link: "https://drive.google.com/file/d/17f85fbs6vN1lRAfTt0kHOIzJnyjixvQB/view?usp=drivesdk" },
+            { name: "Demiana Girges", link: "https://drive.google.com/file/d/16WXlb125MwDphVWhiYLQHHmxL9Q-bl0W/view?usp=drivesdk" },
+            { name: "Amnah Adeeb Mahmood", link: "https://drive.google.com/file/d/1HfuRPJ6mc7j6OiALJAUHcAgalHZrDzgQ/view?usp=drivesdk" },
+            { name: "Nader Abo Elezz Mohamed", link: "https://drive.google.com/file/d/1xCana6MThwrcsvEyfhI43gOhnsTusOUM/view?usp=drivesdk" },
+            { name: "Yousef Atef Kamal", link: "https://drive.google.com/file/d/1MPkgiU6PxSVyeqzYwuXgNON4fICxRqfm/view?usp=drivesdk" },
+            { name: "Mohamed Fahmy Abas", link: "https://drive.google.com/file/d/1umKQOXFxDqhotoHv6uUjCLL59WDPOW4D/view?usp=drivesdk" },
+            { name: "Menallah Ashraf Abdallah", link: "https://drive.google.com/file/d/1Vf3ThRfOM1rLwgYARgB5LQxkvMGCULgJ/view?usp=drivesdk" },
+            { name: "Rawan Ahmed El-sheikh", link: "https://drive.google.com/file/d/1qO4ypXKGA6sEHGUwOjWFZvc0QwlcgLvH/view?usp=drivesdk" },
+            { name: "Amany Ebrahim Abdelbaky", link: "https://drive.google.com/file/d/1zQ1Sa_w8nJVvFGwtwkoi1RPj6Y26cHp-/view?usp=drivesdk" },
+            { name: "Abo Al-ila Megahed", link: "https://drive.google.com/file/d/1MMdGfDdMK_2iEcvcxFdPH4wwsZpMUxEX/view?usp=drivesdk" },
+            { name: "Mohamed Abdelaziz Mohamed", link: "https://drive.google.com/file/d/1WIxF2BgbNIiNc32O2E428FTRYUSULtUp/view?usp=drivesdk" },
+            { name: "Ayman Bassyouni Shaaban", link: "https://drive.google.com/file/d/1DFVIaJGDpYl7H3y1EZwTqEf_uNdeLbDM/view?usp=drivesdk" },
+            { name: "Dina Reda Mahmoud", link: "https://drive.google.com/file/d/1IgETHeisQTo03WzqtQPeMx4hAzsvU8aw/view?usp=drivesdk" },
+            { name: "Salah Abd-elghany Saad", link: "https://drive.google.com/file/d/1WJu8ankvVIDYeG8ez80OWjZo19HhCDj-/view?usp=drivesdk" },
+            { name: "Meret Maged Naguib", link: "https://drive.google.com/file/d/1wl-edmfIgkUXbLSsmlP2gRRQTY0vKL_N/view?usp=drivesdk" },
+            { name: "Lobna Abdelfatah Atia", link: "https://drive.google.com/file/d/1CUrXNushNWTL1rcoIi1t1MNOLcnm0c8n/view?usp=drivesdk" },
+            { name: "Miriam Akram", link: "https://drive.google.com/file/d/1af4jgHBTk-BvsYAdszvWqIeM93Ao77_X/view?usp=drivesdk" },
+            { name: "Amira Samir Mohamed Zaghlol Abdelazez", link: "https://drive.google.com/file/d/1fCc9gd4g0goEi0UEZk3MPSZUv5jW9ums/view?usp=drivesdk" },
+            { name: "Mohamed Mostafa Elsayed", link: "https://drive.google.com/file/d/1szMZFZEZ656VI3pKOXsSnKwNoaLRW9g7/view?usp=drivesdk" },
+            { name: "Abdelrahman Mahmoud Khalil", link: "https://drive.google.com/file/d/1p76uEwCtkSb0QrQu3UuO9sTHtDYbN1U1/view?usp=drivesdk" },
+            { name: "Amr Abubkr Hassan", link: "https://drive.google.com/file/d/1HEaZYzdmjEUQTkbfJRUi90Z3d7q-asDG/view?usp=drivesdk" },
+            { name: "Engy Said Hakem Abdalla", link: "https://drive.google.com/file/d/1ZZCiABgMZ_z72Z2k-bZaDcu52Tp6BK0n/view?usp=drivesdk" },
+            { name: "Nourhan Khaled Kamal Ahmed", link: "https://drive.google.com/file/d/1KnuBwomvsXtUDWGVWc7grleGyHDmIl50/view?usp=drivesdk" },
+            { name: "Nour Yasser", link: "https://drive.google.com/file/d/16yPMaH1zdQ4S5t8AzR_zr_Mau0aPApzx/view?usp=drivesdk" },
+            { name: "Reem Yasser Abdelatif Mansour", link: "https://drive.google.com/file/d/1sqpK6fXJWrOByKxDjTNqNUXGFTLaMtQ7/view?usp=drivesdk" },
+            { name: "Jasmin Mohsen", link: "https://drive.google.com/file/d/1-Q56qpnscYDUM8iWhg0Y3r8F0HLjzVpK/view?usp=drivesdk" },
+            { name: "Nada Khaled Ahmed", link: "https://drive.google.com/file/d/1XvnR0cnT4F-SpVpi3oJjUik34KaiCuRl/view?usp=drivesdk" },
+            { name: "Rana Yasser Ghania", link: "https://drive.google.com/file/d/1ZNert-k8Gp49r31CwpLLP8PCrHfR_h7d/view?usp=drivesdk" },
+            { name: "Kholoud Ashraf Elsayed Ali", link: "https://drive.google.com/file/d/1L-5ouxYQthbgSfAcSIJetn7fjH3kXzlz/view?usp=drivesdk" },
+            { name: "Hossam Mamdouh Sophi", link: "https://drive.google.com/file/d/1PbjwMc94qtnJK2Eykm16SncB5tR2wa-m/view?usp=drivesdk" },
+            { name: "Norhan Mousa Abdel Raof Eletr", link: "https://drive.google.com/file/d/1BbOpIrfhjlmbhTAGlhmbliVYG814UU8E/view?usp=drivesdk" },
+            { name: "Ayat Khaled Mohamed Sallam", link: "https://drive.google.com/file/d/1CEhA2o2sbGFdXzU8BbvTvPnqxVWEUjOv/view?usp=drivesdk" },
+            { name: "Fatma Sherief Rabea Mohamed Kandel At", link: "https://drive.google.com/file/d/13knWVeE_RlcJ3QU-_52xjwMVPd6Cce04/view?usp=drivesdk" },
+            { name: "Weam Osama Mohamed", link: "https://drive.google.com/file/d/1t3oi1zCG27MZRcbT-VFQMm-jJ_i53C3D/view?usp=drivesdk" },
+            { name: "Bahaa Aldien Ramadan Nour", link: "https://drive.google.com/file/d/1YhhIuA9GO9WRbaLtu42bb5XmZcE-gpcp/view?usp=drivesdk" },
+            { name: "Esraa Mohammed Rezk Elnagdy", link: "https://drive.google.com/file/d/1zd6bU0TvJdmbDVCZQbIho_QYcrs23UZ7/view?usp=drivesdk" },
+            { name: "Dina Abdulla Henidak", link: "https://drive.google.com/file/d/1LyNXl01MYj9U2tWjA0MBuFBLA5aBUaVX/view?usp=drivesdk" },
+            { name: "Menna Mohammed Ali", link: "https://drive.google.com/file/d/1W45T6TU-ymIeXPhrNV8L7yIcS6HbmR7W/view?usp=drivesdk" },
+            { name: "Amna Mohamed Gad", link: "https://drive.google.com/file/d/1GkhCrEm74ChbrGedr8nY2Ib1XewaZLwv/view?usp=drivesdk" },
+            { name: "Abdelrahman Mahmoud Eisa", link: "https://drive.google.com/file/d/1joJOVLcuHCXrsP1h-5Mp0J1quDOlcCLM/view?usp=drivesdk" },
+            { name: "Aya Ebrahim Shawky", link: "https://drive.google.com/file/d/1pc7FNOB0Kt7bZm7xLawLpH_6UoXHQKcB/view?usp=drivesdk" },
+            { name: "Mariam Ahmed Abdelhamed", link: "https://drive.google.com/file/d/1u6mTRZwQX521C41u417CCgwaT0mQ5uZS/view?usp=drivesdk" },
+            { name: "Seham Mohamed Abd Elhamed", link: "https://drive.google.com/file/d/1GhIHLkMtQkWtPzCAuqB5M5oQyHUIcrJU/view?usp=drivesdk" },
+            { name: "Andrew Hany", link: "https://drive.google.com/file/d/1CT4-YHGp55Uq80tcih2V02D5w-JhEyru/view?usp=drivesdk" },
+            { name: "Esraa Khaled Mohammed Sallam", link: "https://drive.google.com/file/d/1oIItC88W1UFMZ7CZwg5sqm5PoqPSezSm/view?usp=drivesdk" },
+            { name: "Mai Essam Aziz El Din", link: "https://drive.google.com/file/d/1cOF8aw2myLUyXN1UjeBq4PblAv4ghubS/view?usp=drivesdk" },
+            { name: "Afnan Saleh", link: "https://drive.google.com/file/d/1zyV0ZxZ6Lh1mCb0eNoI0N4wmjWly1lxa/view?usp=drivesdk" },
+            { name: "Mennatallah Hany Maher Bayoumy", link: "https://drive.google.com/file/d/1_sS4-RiH_FPObWZC8ue1ttseQcj652qx/view?usp=drivesdk" },
+            { name: "Mennatallah Hany Fathy", link: "https://drive.google.com/file/d/1bP036Ju39rj4fALb6uJe0jzZOsf2az29/view?usp=drivesdk" },
+            { name: "Fares Tayel Abo Elyazeed", link: "https://drive.google.com/file/d/1svuhFGIz8yCzsriq_VYjGVn3VXQu3KBt/view?usp=drivesdk" },
+            { name: "Youssef Ali Riad Elhawarey", link: "https://drive.google.com/file/d/1ZLLmINP8efCLCe6rGEBOLkw49qbVieYr/view?usp=drivesdk" },
+            { name: "Mohamed Ali Albaz", link: "https://drive.google.com/file/d/1vRzh7xnybuVEBevK3nea-pds25plOjIU/view?usp=drivesdk" },
+            { name: "Tarek Mahmoud Gadallah", link: "https://drive.google.com/file/d/19R1SFxSMkvizO0aIkI7Li-cJQPvFc3PD/view?usp=drivesdk" },
+            { name: "Nour Mohamedadly", link: "https://drive.google.com/file/d/1Y2g1vHPt4UfhQLN4nz3-0BntKE-Mi_dL/view?usp=drivesdk" },
+            { name: "Lina Gamal Naguib Abd-elmessih", link: "https://drive.google.com/file/d/1tMtAwte8OTgShrpHEpzI1tJsfcIzqA0Y/view?usp=drivesdk" },
+            { name: "Shahd Mohamed Kamal", link: "https://drive.google.com/file/d/1XKP46Qe_kTvpO5em66e84xW9VKr3_T26/view?usp=drivesdk" },
+            { name: "Asmaa Kamel Farid", link: "https://drive.google.com/file/d/110Bo6tUhV7T4A9xMZE_zJsZi6wlwekcQ/view?usp=drivesdk" },
+            { name: "Madonna Khaled Sadaan", link: "https://drive.google.com/file/d/1q8tVj2zpQzHqpdrB3PwHayks6g5Gu-AK/view?usp=drivesdk" },
+            { name: "Nancy Ashraf Ali Ali Zaid", link: "https://drive.google.com/file/d/1odrEgwQwWZXmv1WjYv4UuIRi8XADp2bv/view?usp=drivesdk" },
+            { name: "Rahma Usama Tharwat Elhagari", link: "https://drive.google.com/file/d/1ZWv7xwzNpY2XLZtRbs0djLOgBcZuzEB5/view?usp=drivesdk" },
+            { name: "Mennatullah Mahmo Hassan", link: "https://drive.google.com/file/d/1fDvyJxB5LMCpa-kajjkvv1V0nvL6wS2n/view?usp=drivesdk" },
+            { name: "Habiba Ibrahim Mohamed Rashad", link: "https://drive.google.com/file/d/1mHkP4_XSFSLWuegnCmqR40wjODOitkQL/view?usp=drivesdk" },
+            { name: "Nouran Khalid Mohammed", link: "https://drive.google.com/file/d/1rHGbx3bI9ssGAnkqHcdBVHy0hwKWIUXV/view?usp=drivesdk" },
+            { name: "Hassan Ahmed Abd Elkhalek", link: "https://drive.google.com/file/d/137GtIi44qOuQcAyLqb0ydypRZ7XmmvQd/view?usp=drivesdk" },
+            { name: "Menna Allah Shreif Abdallah", link: "https://drive.google.com/file/d/1yx19ip-u0Xd1YWUe3M3EYTU39B05tnQY/view?usp=drivesdk" },
+            { name: "Yusra Ibrahim Hussein", link: "https://drive.google.com/file/d/1Kb_2AcxJMfIUQdMTGEoBJKGR900MtdL-/view?usp=drivesdk" },
+            { name: "Mariam Mohamed Elsayed Elsanafery", link: "https://drive.google.com/file/d/11PoPfsi6Tv7SVVUfHPmQKhUs1qJq1o7M/view?usp=drivesdk" },
+            { name: "Menna Allh Mohamed Abdellateef", link: "https://drive.google.com/file/d/1QBMAtL6gzCRkxQb_jPfrOF4OtnVGxq9v/view?usp=drivesdk" },
+            { name: "Menna Essam Maghawry", link: "https://drive.google.com/file/d/1Wt_MfnSN9zLRvUAAPS5WnV35pHkg-hM5/view?usp=drivesdk" },
+            { name: "Kenzy Amr Mohsen", link: "https://drive.google.com/file/d/11IY0VGb17M1pFgu0ZJf_frnDrP-_l5pf/view?usp=drivesdk" },
+            { name: "Omar Mohamed Moustafa Hassan", link: "https://drive.google.com/file/d/1LCk3SaQJPsOBbCn9g9F5Yp18JGwrL2DK/view?usp=drivesdk" },
+            { name: "Menna Mustafa Rashad", link: "https://drive.google.com/file/d/1Cbk3K8V8MogP2F5MI9FXLt-487Ulqmlp/view?usp=drivesdk" },
+            { name: "Toqa Ahmed Herz", link: "https://drive.google.com/file/d/1qINK8O0joRggVXOqdf8I4aWVxpxXFhYr/view?usp=drivesdk" },
+            { name: "Amr Walid Hosseini Ali", link: "https://drive.google.com/file/d/15ey1s5cjslPPiqvWQ4ENawoPVBSYaNot/view?usp=drivesdk" },
+            { name: "Hager Ashraf Ali", link: "https://drive.google.com/file/d/1O0IAeYqJGvYooQj-LPy1ZKDBGjWw1cYl/view?usp=drivesdk" },
+            { name: "Aya Abdallah Mohamed", link: "https://drive.google.com/file/d/1uSYDLvG3KExX11DJyN0gca5oOPX_0f1s/view?usp=drivesdk" },
+            { name: "Aya Mahmoud Hussein Ali", link: "https://drive.google.com/file/d/1PVNvGnf0YEM7HEww9N96dhDSn2ezbFTX/view?usp=drivesdk" },
+            { name: "Nrmeen Alaa Mohammed", link: "https://drive.google.com/file/d/1yA98c8Hnz-7rNUt3K-x2YRNM9LpDrGR6/view?usp=drivesdk" },
+            { name: "Maryam Ahmed Abdelmonam", link: "https://drive.google.com/file/d/1JCjU55pvBYOa-lpQlc_iIccnwiYaVWDr/view?usp=drivesdk" },
+            { name: "Baraah Ahmed Marwan", link: "https://drive.google.com/file/d/1v5lGLqkG8AR7PVotC361FY_FBZPgKQyK/view?usp=drivesdk" },
+            { name: "Mariam Abdelhamed Elshabasy", link: "https://drive.google.com/file/d/1H1A-Un0cqYBxGRfYjptpHLewHJgJ1V3s/view?usp=drivesdk" },
+            { name: "Lames Hazem Ragai", link: "https://drive.google.com/file/d/1TWgo2-BCzAzlO_vRAdJpGQ4as6oVM2-5/view?usp=drivesdk" },
+            { name: "Shimaa Elsayed", link: "https://drive.google.com/file/d/1FG8TYnWY4afu_UYEnidQjlFhHaFxIPby/view?usp=drivesdk" },
+            { name: "Marwan Hany Abd Elfatah", link: "https://drive.google.com/file/d/1U0iVODfxTdnd29bXyvrolCwf-obiBafk/view?usp=drivesdk" },
+            { name: "Eman Ahmed Anany Alanany", link: "https://drive.google.com/file/d/1Tqxit3kkQ0aFR_Ls6AGFzjIUNquzwcP_/view?usp=drivesdk" },
+            { name: "Mariam Mahmoud Saad", link: "https://drive.google.com/file/d/1JIAKBNGVvIs_LjviqQexYy0DDTi4pJea/view?usp=drivesdk" },
+            { name: "Mina Samy Zaky", link: "https://drive.google.com/file/d/1oRtxDGXtS5MmqXpxj_mFnhc4r-X_DAIb/view?usp=drivesdk" },
+            { name: "Wafaa Shaker Mohammed Al-tahan", link: "https://drive.google.com/file/d/1bEPxc-KO3Jkt0o_cOu_u1A0fyQ1QlFyC/view?usp=drivesdk" },
+            { name: "Mennatullah Mahmoud Ahmed", link: "https://drive.google.com/file/d/1RMQWWC-BeOXHki6ansJEYaVk9KMxDDlf/view?usp=drivesdk" },
+            { name: "Arwa Ashraf Ahmed Mohamed", link: "https://drive.google.com/file/d/1iTTvwkoZ-rdfE0QA4X9H9Js6xw9JLv9r/view?usp=drivesdk" },
+            { name: "Jana Hesham Ossman Mohamed", link: "https://drive.google.com/file/d/1uKUzkQFO1DxU3PSkDxudA0ufJ3HRuQTI/view?usp=drivesdk" },
+            { name: "Dareen Mohammed Elattar", link: "https://drive.google.com/file/d/1AsJKAr9F6UBLu3Jhj7MT_dF-GNAoWVN_/view?usp=drivesdk" },
+            { name: "Solafa Mohamed Kamel Zaid", link: "https://drive.google.com/file/d/11M3B190_BrnS5xMckAxkssZa3Kf-DQ1u/view?usp=drivesdk" },
+            { name: "Sara Abdelsalam Hussien Abdelsalam", link: "https://drive.google.com/file/d/1Af7u8vKRtcuuNeP-ujAlTo8kIJqtiD-U/view?usp=drivesdk" },
+            { name: "Hadeer Hany Fathy", link: "https://drive.google.com/file/d/1-vvfQFpCTo8RxR9d2pC9Dzmgifmmo7M-/view?usp=drivesdk" },
+            { name: "Yousef Ashraf Ghazalah", link: "https://drive.google.com/file/d/14TdMemTFd2vhnCl9U4aXvPE93VWdRFk7/view?usp=drivesdk" },
+            { name: "Hadeer Mohammed Abd-elsattar", link: "https://drive.google.com/file/d/1Z7AJfmEIFo6etBvPJAe3V8YgAdhvIJD4/view?usp=drivesdk" },
+            { name: "Ola Osama Abdelletif Mohammed", link: "https://drive.google.com/file/d/1zwHziHOJFa7o_-H53U6hOm-c6Xf4Wlhg/view?usp=drivesdk" },
+            { name: "Yossef Medhtat Ebrahim Mahmoud", link: "https://drive.google.com/file/d/1pwROzIvy9WqZY8GMA0QXuSR7Mhoq9rkk/view?usp=drivesdk" },
+            { name: "May Ismail Hassan", link: "https://drive.google.com/file/d/16lFpiKLOU9Ew_21kQcaxCB2ahnsy2xm1/view?usp=drivesdk" },
+            { name: "Yasmin Mohamed Hanafy", link: "https://drive.google.com/file/d/1Aq9fcEOfQwnIW7DmqMTaYNjf4sE8MetF/view?usp=drivesdk" },
+            { name: "Ahmed Mohamed Abdulsamad", link: "https://drive.google.com/file/d/1cpw1rUkeYwO7dcQnVrKn0GS6LlAtlwxE/view?usp=drivesdk" },
+            { name: "Shimaa Abdelbar Nour Mohamed", link: "https://drive.google.com/file/d/1-o10YJ6v1s03NmqlvKxtdVl-vnAf4Ejy/view?usp=drivesdk" },
+            { name: "Mahmoud Waheed Hamed", link: "https://drive.google.com/file/d/16zkUv4LONfEiTfhUtNxA9oTvH4sMLdta/view?usp=drivesdk" },
+            { name: "Ahmed Mohamed Ebrahim Elbauomy", link: "https://drive.google.com/file/d/1pht1sQzQHBEZpHNzJfm4MrzZgbaVUemg/view?usp=drivesdk" },
+            { name: "Shady Nabil Hassan", link: "https://drive.google.com/file/d/18D5_y3zhF8a5ilTBqPE-QORXClUn8D1u/view?usp=drivesdk" },
+            { name: "Soha Ahmed Dowy", link: "https://drive.google.com/file/d/1LnJMv0nJW3B18PNoV9WV4eFapOVWeVFw/view?usp=drivesdk" },
+            { name: "Madiha Salah Mahmoud", link: "https://drive.google.com/file/d/1kwDyLTOkU9Rm3Ppk7FS2zPEPZ09RBANU/view?usp=drivesdk" },
+            { name: "Bassmala Hossam Hesene Nabil", link: "https://drive.google.com/file/d/1LRPS88orpKCtbvIr3ZhrGSApgNxdAPmi/view?usp=drivesdk" },
+            { name: "Angel Emad", link: "https://drive.google.com/file/d/1LK6ejywtm3fVQF1Fq1X_IYHIg1vn56Xg/view?usp=drivesdk" },
+            { name: "Olivia Hany Metyas", link: "https://drive.google.com/file/d/1PxLNzjj3pnOQrG4xHc12XuNCQxO0BvRV/view?usp=drivesdk" },
+            { name: "Sarah Ahmed Abdelhamed Ibrahim", link: "https://drive.google.com/file/d/1_4jWRl2QTaIxIGJ4YKDyl-nOlD6lVF_6/view?usp=drivesdk" },
+            { name: "Mariam Abdelraheem Eletrepy", link: "https://drive.google.com/file/d/1vd82AGKNoBEPecTJm1D6i24m2qJZqhZz/view?usp=drivesdk" },
+            { name: "Abrar Osama Muhammad Jaballah", link: "https://drive.google.com/file/d/1BsG1sAXJXwQnTIOLDGtHgpEARplW-juF/view?usp=drivesdk" },
+            { name: "Arwa Mohamed Mohamed Ali", link: "https://drive.google.com/file/d/10Z9r7_TJfiDky7Zn-9ZvJFRaGNiVEQJO/view?usp=drivesdk" },
+            { name: "Mohamed Esam Ahmed", link: "https://drive.google.com/file/d/15CsZJ3_plaZcYXOetjzvjvYnFfCejglG/view?usp=drivesdk" },
+            { name: "Nouran Tarek Ali", link: "https://drive.google.com/file/d/1w3NUHt24aE3mYiJm_n_yfctcczZxtACf/view?usp=drivesdk" },
+            { name: "Yasmin Ezat Abdelbary Abdelfadil", link: "https://drive.google.com/file/d/1UuMLj2U0DOsPXrM4oDk1zGa2ozTOYVjr/view?usp=drivesdk" },
+            { name: "Aya Abdullah Abdelrhman", link: "https://drive.google.com/file/d/19SS21xJCDXiK-DeBgj2mvnLSRBhX2u0K/view?usp=drivesdk" },
+            { name: "Sara Rashed", link: "https://drive.google.com/file/d/1vI6aSh7WimXwj2sPIO8a6kDzvXJ5hC2t/view?usp=drivesdk" },
+            { name: "Mohamed Abdelhady Shaban", link: "https://drive.google.com/file/d/1wv4OkzVdXP45r49irwzYbegsOMfpVP8c/view?usp=drivesdk" },
+            { name: "Ahmed Salah Zalat", link: "https://drive.google.com/file/d/1UMGVy-S1n_iBt0yFWu6_kdRw5khsw4R9/view?usp=drivesdk" },
+            { name: "Lana Ebrahim Mohammedein", link: "https://drive.google.com/file/d/17Iovus40z-DHj0iWBUfGxs-FQ3q9tcnE/view?usp=drivesdk" },
+            { name: "Yasmeen Mohamed Mohamed", link: "https://drive.google.com/file/d/1bIKG7YT9z7kA_kBvgExTjr00rTaIvmpn/view?usp=drivesdk" },
+            { name: "Tayseir Ezzat Fahmy", link: "https://drive.google.com/file/d/1UkS9DK7aKcv8QqGqKiBM2sqzWCDP8qtp/view?usp=drivesdk" },
+            { name: "Alaa Ali Baraka", link: "https://drive.google.com/file/d/1o4R2GeA5AMXq_3uqWGTYYQpOPRFGqReZ/view?usp=drivesdk" },
+            { name: "Salma Mohamed Ibrahem Elgendy", link: "https://drive.google.com/file/d/15YCzhE9q46MXQv03FAkWZxhykO1GydZL/view?usp=drivesdk" },
+            { name: "Mennatallah Hesham Ahmed Barbar", link: "https://drive.google.com/file/d/1ykiQjxbunMFB27zEYhjrmxNeQe3vTitN/view?usp=drivesdk" },
+            { name: "Doha Tarek Fouad", link: "https://drive.google.com/file/d/1Qm8ma2BvIHgYZF2TTfuY1-v7Tmx9SdfJ/view?usp=drivesdk" },
+            { name: "Ahmed Mubarak 663", link: "https://drive.google.com/file/d/19UGpzqKmtRrRosb97f3GlVdqJdCTHX2J/view?usp=drivesdk" },
+            { name: "Arwa Ali Soliman Mohammed", link: "https://drive.google.com/file/d/1EZ0f49bM7ldvl4DqiDu6Ua-wgCLhnGRD/view?usp=drivesdk" },
+            { name: "Arwa Abdelaziz Draz", link: "https://drive.google.com/file/d/1olJKS7FFNZkfSfnZjUmW87caSWeEgNY3/view?usp=drivesdk" },
+            { name: "Nouran Ali Othman Alsayid", link: "https://drive.google.com/file/d/1m32IypcLtiahFwWj817TYLIHCm7nOScb/view?usp=drivesdk" },
+            { name: "Omnia Elsayed Mahgoub", link: "https://drive.google.com/file/d/1Kd4rzOlfvfz4OpxWCAOP6JqtzVRguAry/view?usp=drivesdk" },
+            { name: "Mafdy Kaseem Nassif", link: "https://drive.google.com/file/d/1JaHzMeIbOWgnm7c0KQxP06h7hFMUjE2P/view?usp=drivesdk" },
+            { name: "Hana Hany Mohamed Sayed", link: "https://drive.google.com/file/d/1LStWVl86Rsgc8HGBvtI976y1WoYJaf1Z/view?usp=drivesdk" },
+            { name: "Samar Amr Ahmed Elmadawey", link: "https://drive.google.com/file/d/1_JKtMddlNKpTAr264NUUCGB_t5S6at8B/view?usp=drivesdk" },
+            { name: "Fatma Shabban Attya", link: "https://drive.google.com/file/d/1vBIunISnPvsxYSseUR2WnW3j2ztAIO1u/view?usp=drivesdk" },
+            { name: "Asia Mohamed Eloffy", link: "https://drive.google.com/file/d/1DDT8vx-rPIxIVZ0hQ-hfsxkSdB5CJvP9/view?usp=drivesdk" },
+            { name: "Fayza Mohamed Mohamed Sallam", link: "https://drive.google.com/file/d/1q4nw1Bly-QbIlItgxH3dxlUsvyb031JG/view?usp=drivesdk" },
+            { name: "Rania Abduallah Mohammed Hashem", link: "https://drive.google.com/file/d/1qANnvYc9Adf6VXLvS-dmxVmSeZmCstmZ/view?usp=drivesdk" },
+            { name: "Kerolos Magdy Lady", link: "https://drive.google.com/file/d/1wSdrSi-EbuoUt1rPqwDCC7LsVifTPuon/view?usp=drivesdk" },
+            { name: "Aya Gamal Abdelshakour Rashid", link: "https://drive.google.com/file/d/1ckQ7rRQX_Ab6BSAeQr2gQ-Ft_Z6mkbSC/view?usp=drivesdk" },
+            { name: "Mohamed Sayed Mograbey", link: "https://drive.google.com/file/d/1ZTX_fJiFW_qwwWba1yWpgcQbBr9aeSxn/view?usp=drivesdk" },
+            { name: "Mohamed Amr Essa", link: "https://drive.google.com/file/d/1YSo4otv0UMEvTCvzsKG3LzGroGmG2TKp/view?usp=drivesdk" },
+            { name: "Mariam Gamal Eldin", link: "https://drive.google.com/file/d/1j6hCmaRtJ-KFHMbCyWvchSwMYW4rkYsY/view?usp=drivesdk" },
+            { name: "Menna Ashraf", link: "https://drive.google.com/file/d/1TXG6dqICaLjtbUZXqW25d8LoAx5iW_gY/view?usp=drivesdk" },
+            { name: "Haidy Elsayed Atwa", link: "https://drive.google.com/file/d/1kQ5ZHhjC2WoEwiho4dkfK4yjBi_Lcf5s/view?usp=drivesdk" },
+            { name: "Shahd Khaled Zakaria", link: "https://drive.google.com/file/d/1G3_xq8qkw2Xgt-T5xsG-rS6zlbukWU1w/view?usp=drivesdk" },
+            { name: "Marize Bassem Farid", link: "https://drive.google.com/file/d/16SN3OBIlg4_7dhc7Gt7WhMSg7XpfeGF9/view?usp=drivesdk" },
+            { name: "Mohannad Taher Elfakharany", link: "https://drive.google.com/file/d/1bqdw17IIq1yfN1nU_GeNNYR6bzwbZiqg/view?usp=drivesdk" },
+            { name: "Aya Ebrahim Mostafa", link: "https://drive.google.com/file/d/1JAEakKB5Md2L6EYhIAaJYCaLKkcxyWlP/view?usp=drivesdk" },
+            { name: "Rana Mahmoud Mohamed Mahmoud", link: "https://drive.google.com/file/d/158rRRIW6ZlQUaH-C_zo7210xH_p7u5KV/view?usp=drivesdk" },
+            { name: "Adel Elemam Elsayed Ahmed", link: "https://drive.google.com/file/d/1dkdIVI0Gc_0hYdfuJd0_y3O5XOoZaxMN/view?usp=drivesdk" },
+            { name: "Farha Elnomery Helmy", link: "https://drive.google.com/file/d/1kgly9HQ6m9Yv4kSbLDI_2rulPxxnK___/view?usp=drivesdk" },
+            { name: "Maram Mohamed Youssef", link: "https://drive.google.com/file/d/1FMD2hTPyOlSAtnthVWmEXYJhR-8sjVQo/view?usp=drivesdk" },
+            { name: "Nadeen Fathy Ahmed Mokbile", link: "https://drive.google.com/file/d/1KLHLuX5pvL9XHJUFF7k0M0gzVy8dET5T/view?usp=drivesdk" },
+            { name: "Eman Mohamed Elkady", link: "https://drive.google.com/file/d/1pVZZy2bR-jNiiBqL7BCsW0TI2Wj04Klv/view?usp=drivesdk" },
+            { name: "Malak Mohamed Hammam", link: "https://drive.google.com/file/d/12b8GlmJhQ8Kj4cUCfUX-VFOzQQak6UC8/view?usp=drivesdk" },
+            { name: "Abdalla Ismail", link: "https://drive.google.com/file/d/1GvgdrOlGx0CQlyVocNWQ88V5A4bv9Btl/view?usp=drivesdk" },
+            { name: "Nourhan Magdy Ahmed Amin", link: "https://drive.google.com/file/d/1MHoFwVlFApyGz5Bb6WwuWGvywJy4xzdJ/view?usp=drivesdk" },
+            { name: "Moaz Faisal Elasyed", link: "https://drive.google.com/file/d/1hTzswxub_r-De30qxqpF45YFa-7oZ4gP/view?usp=drivesdk" },
+            { name: "Yusuf Shaker Amer", link: "https://drive.google.com/file/d/15WhOTtALbYfQwB3T4knPeP-28XqCmKyg/view?usp=drivesdk" },
+            { name: "Adham Mohamed Fawzy Mohamed", link: "https://drive.google.com/file/d/1SeTA7nKfhif4_OgAnArePUBSWaToBUB4/view?usp=drivesdk" },
+            { name: "Thuraya Karam Nasrallah Wahib", link: "https://drive.google.com/file/d/1MfzPRIuetyRh70Z0CnGqRA_gdSnXNQD1/view?usp=drivesdk" },
+            { name: "Nariman Maher Ibrahim Mansor", link: "https://drive.google.com/file/d/1_kk5zKiX5aKL1FDWhP7bbZEA8CRskiJH/view?usp=drivesdk" },
+            { name: "Ganna Sameh Mohammed Ahmed", link: "https://drive.google.com/file/d/1lQDjhKlo8dshI9z88FnhdOl0FikEk7Wp/view?usp=drivesdk" },
+            { name: "Aya Ahmed Abdelghany", link: "https://drive.google.com/file/d/1EV4Vtv_Q3RRtLSAwWdtzDQM3a_3l3Cgh/view?usp=drivesdk" },
+            { name: "Mennatullah Ahmed Mohamed", link: "https://drive.google.com/file/d/1fta65j4SRNEqsNKIXQQsPrhOeyM3ErYL/view?usp=drivesdk" },
+            { name: "Faten Mohamed Mohamed Ali", link: "https://drive.google.com/file/d/1dYMOdt1ECHsRFWPZd3sp4pXmXZNRDUNG/view?usp=drivesdk" },
+            { name: "Zeinab Mohamed Hagras", link: "https://drive.google.com/file/d/1n2mWJ4EcWNYuy-iN6fg68WBzyMq3GSpv/view?usp=drivesdk" },
+            { name: "Nada Ahmed Mohamed Salem", link: "https://drive.google.com/file/d/1Mu85EzJ-KYjSwBbH1jHIWlX0K0AptgBi/view?usp=drivesdk" },
+            { name: "Sarah Yousry Abdelrahman", link: "https://drive.google.com/file/d/1GAIk5mEIvTItEaFIRtfBT3B56auhIDQg/view?usp=drivesdk" },
+            { name: "Aya Maged Elkhawaga", link: "https://drive.google.com/file/d/1D_ezIGgIQOt2S3KZAIwZgg1yXEvSwJ_D/view?usp=drivesdk" },
+            { name: "Hala Abd-elradi Mohammed", link: "https://drive.google.com/file/d/1XqQ_ZACFdqPcKOcEEwBkH1gZuCCfNe45/view?usp=drivesdk" },
+            { name: "Romany Awny", link: "https://drive.google.com/file/d/1_NrQgZtWAZwOHBknEB6D9JlIFsbQMsus/view?usp=drivesdk" },
+            { name: "Eman Mahmoud Mohamed Abdelmalek Shoaib", link: "https://drive.google.com/file/d/1WrjLaARl5KjWTgzGe5uUEC7qeZA4SFqO/view?usp=drivesdk" },
+            { name: "Aya Abdelnaser Ahmed", link: "https://drive.google.com/file/d/1bn7b0IsnfW4xRQ8zHl48Ou4oUiaD-ZpH/view?usp=drivesdk" },
+            { name: "Aml Ahmed Elroby", link: "https://drive.google.com/file/d/14xfDdyR9al0mZrJaSNv28D70sTtDtcRB/view?usp=drivesdk" },
+            { name: "Rahma Sweilam Atia", link: "https://drive.google.com/file/d/12eyTbKfO1cwwcMjqXoRnTvEy5IqfvVb1/view?usp=drivesdk" },
+            { name: "Nour Mohamed Mostafa Abdelaziz Ibrahim", link: "https://drive.google.com/file/d/1cS88lr5sl7sfMlJWZqmK8KFdT41w8JOt/view?usp=drivesdk" },
+            { name: "Nardeen Tanious Wassef", link: "https://drive.google.com/file/d/1tV_x2OZ9KDP4S7Qtr6-ZhRWJ1KPP5ok6/view?usp=drivesdk" },
+            { name: "Raghad Al-sayed Mohamed", link: "https://drive.google.com/file/d/1UaUj7sRUQwJ5MrP3UqyK4sZRMdlwoTGT/view?usp=drivesdk" },
+            { name: "Abdelraheem Hamed Dawod", link: "https://drive.google.com/file/d/10LDrCarUgUQT1CUmFUNjYvUf8E1R9p0j/view?usp=drivesdk" },
+            { name: "Nouran Nasr Mohammed", link: "https://drive.google.com/file/d/1lTkTYsZ0USXOvzBOEI8TVtCRwVviZkQ2/view?usp=drivesdk" },
+            { name: "Toqa Mansour Abdo", link: "https://drive.google.com/file/d/1kzmkvjE57qvEAJLT_jSi6axyD-Ndbwc8/view?usp=drivesdk" },
+            { name: "Sohaila Mohamed Ahmed", link: "https://drive.google.com/file/d/1VBS5U3QxkAYATm7kEq3z8e2neUQzFVNp/view?usp=drivesdk" },
+            { name: "Abdalluh Montaser", link: "https://drive.google.com/file/d/1IPG6gsOVReDL1ZtHFAD_Ziz6NT9WDSke/view?usp=drivesdk" },
+            { name: "Mostafa Omar Abdelaziz", link: "https://drive.google.com/file/d/1XOjYJL-sB7wcRVORBLTeH_K-y6MV01Mh/view?usp=drivesdk" },
+            { name: "Maria Maher Farouk Hakeem", link: "https://drive.google.com/file/d/14OBdvmqWUpM-KPi_Yy_ja9yU42tjOH5f/view?usp=drivesdk" },
+            { name: "Gomana Nabil Naeem", link: "https://drive.google.com/file/d/1j2u58tKOJlZwwCu3c47utnutvc70taAJ/view?usp=drivesdk" },
+            { name: "Yasmin Hosni Ahmed", link: "https://drive.google.com/file/d/1JfV4yWmmCP0BiIsoQZcVbR_CZje1UALz/view?usp=drivesdk" },
+            { name: "Mariam Ayman Mostafa", link: "https://drive.google.com/file/d/1tyV9UjikwwR_mF4V49OsqqbxMf_0dKEQ/view?usp=drivesdk" },
+            { name: "Salwa Alsayed Fahmi", link: "https://drive.google.com/file/d/1cHDLPxQagzDo1OgQwcC5IFR-dU56wpE/view?usp=drivesdk" },
+            { name: "Menna Abdel Moneim Shouman", link: "https://drive.google.com/file/d/1JnJYzKQOx1h_URyG1bwemNsZ2FBMsLhb/view?usp=drivesdk" },
+            { name: "Aya Ibrahim Elsayed Ali", link: "https://drive.google.com/file/d/1-oay4TCCvT7wva16W5BsGusrzuoCEtP_/view?usp=drivesdk" },
+            { name: "Fatma Hamada Hassan", link: "https://drive.google.com/file/d/1x209PcZPv8pkImvx5P3ObBCs9TRop5_x/view?usp=drivesdk" },
+            { name: "Alaa Ashraf Sayed Ahmed Elzahi Attia", link: "https://drive.google.com/file/d/1R0lEQoIyZuVnVzbcCWQM2hWI8l_jjxRk/view?usp=drivesdk" },
+            { name: "Kerolos Elia Adly Labib", link: "https://drive.google.com/file/d/1K7AmilQnpHHuUJhmioHPAUF3ZRDn_Zhz/view?usp=drivesdk" },
+            { name: "Fatma Salah Mohammed", link: "https://drive.google.com/file/d/13uRtGwtocAHiTj1zWsASaqPilaqTdab9/view?usp=drivesdk" },
+            { name: "Eman Saher Mohammed", link: "https://drive.google.com/file/d/1v9nrqCLzOzoXxb0EBBKxLJ4zEXYClGra/view?usp=drivesdk" },
+            { name: "Ahmed Omar Galal", link: "https://drive.google.com/file/d/1eqwTpitiG640amO8tqEvNEdz8SzggMFu/view?usp=drivesdk" },
+            { name: "Arwa Mahgob", link: "https://drive.google.com/file/d/14M7yjngK3TNgLtZXEjjYXRQeYCG5t-hO/view?usp=drivesdk" },
+            { name: "Ganna Ezzeldeen Mohamed", link: "https://drive.google.com/file/d/1yWD3n3BspE1eL7S1j_4DJiBrJ4CfN2Ab/view?usp=drivesdk" },
+            { name: "Duha Abdelsalam Semary", link: "https://drive.google.com/file/d/1iQIQR8gbymGqiiEBIpcZgVDyhUssvRZB/view?usp=drivesdk" },
+            { name: "Ahmed Hany Ahmed Abdelkader", link: "https://drive.google.com/file/d/1xOqdKOwZ6xe5j1CjWYIJGtaw4rq2_Dxv/view?usp=drivesdk" },
+            { name: "Heba Ahmed Eldouh", link: "https://drive.google.com/file/d/1F3K9h-HheOOyae4gQZA0QaaS1HqMri1C/view?usp=drivesdk" },
+            { name: "Judy Mohamed Ayad", link: "https://drive.google.com/file/d/1M81w8CMCr6yPAwJthHVwbTYpm6I0vLQZ/view?usp=drivesdk" },
+            { name: "Amal Ehab Abdelaziz Elsayed", link: "https://drive.google.com/file/d/1PwR8IySfA-jn74lnMBZxmz9YYVOAkWH7/view?usp=drivesdk" },
+            { name: "Haya Hesham Abd El-aziz", link: "https://drive.google.com/file/d/1PNzNy0Z8PB1EcpjeKH-5XH8jns679Ei2/view?usp=drivesdk" },
+            { name: "Nada Khaled Abdelgiad", link: "https://drive.google.com/file/d/1fvXiyYirzI0W_LaKi5ZK7eU0sLKKUAGw/view?usp=drivesdk" },
+            { name: "Fatma Samy Elsayed", link: "https://drive.google.com/file/d/1fhkPooTnuxbsrCoERSO-1I7ewoI20siL/view?usp=drivesdk" },
+            { name: "Sama Ahmed Farouk", link: "https://drive.google.com/file/d/1ChIQ16LDKAw2JaO8JOn9G68X4d2GUHL0/view?usp=drivesdk" },
+            { name: "Eman Essam Ibrahim Mansour", link: "https://drive.google.com/file/d/17UElAM47CjRXU9uOfnHnApbbCkd5OTyj/view?usp=drivesdk" },
+            { name: "Marwa Hamada Mousa Attia", link: "https://drive.google.com/file/d/18hgAd_5Q_ZEFucfiO5Ef9wG4RUWddpnz/view?usp=drivesdk" },
+            { name: "Ali Elsaeed Mahmoud", link: "https://drive.google.com/file/d/1_guCMMx8DxYuVuRIPZ737Wz61EY10RDB/view?usp=drivesdk" },
+            { name: "Rawan Mohamed Mahmoud Abrahim", link: "https://drive.google.com/file/d/16zm-XwYCsGL8SVBaN9kF9b3dimMyzJVA/view?usp=drivesdk" },
+            { name: "Doaa Abdalla Farag Hassan", link: "https://drive.google.com/file/d/1bBTs63F2hbi8ZB31_PmHEH9rttcGXoYA/view?usp=drivesdk" },
+            { name: "Mohamed Usama Mohamed Mehessen", link: "https://drive.google.com/file/d/15aoOVmd-YhYAdOJNwbjJTUjiazaceGxV/view?usp=drivesdk" },
+            { name: "Hanin Ehab", link: "https://drive.google.com/file/d/1gr4-RBZGVNZorU82Z-Rmb26PW2t_R8Gz/view?usp=drivesdk" },
+            { name: "Amna Ayman Hosny", link: "https://drive.google.com/file/d/1ehEyJWPNEgbGhZ5T43etXAJ3F9qlhFli/view?usp=drivesdk" },
+            { name: "Shrouk Fathy Abdallah", link: "https://drive.google.com/file/d/1zQrC71vfPEiW1tciD2V1SIEDan8wzIlS/view?usp=drivesdk" },
+            { name: "Sawsan Osama Mohamed", link: "https://drive.google.com/file/d/1uS4yV7rN2Mu0w5vyU9h1IkVWntnXu9Gj/view?usp=drivesdk" },
+            { name: "Nour Magdy Abd Elhay", link: "https://drive.google.com/file/d/1CwPnJbo9ErwqfuS-f4Kq3FsTZPPxdFXv/view?usp=drivesdk" },
+            { name: "Muhammad Shehata", link: "https://drive.google.com/file/d/1U3jMp6CmFF8dRk3mlIUlIhK0t-B3U1pQ/view?usp=drivesdk" },
+            { name: "Hassan Azmy Mohammed Ebrahim", link: "https://drive.google.com/file/d/1XlcEAr7lFfO7Cc8hB3dxAlJVDQvDzKnz/view?usp=drivesdk" },
+            { name: "Verina William", link: "https://drive.google.com/file/d/1VuKRCuFppnCFxt_KJpWxx1COw2F1n6eZ/view?usp=drivesdk" },
+            { name: "Donia Alaa Ghoneim", link: "https://drive.google.com/file/d/1jog-b6JRpAo1JXtEXIvWw93EfINiNO74/view?usp=drivesdk" },
+            { name: "Ahmed Hussein Mohamed Shamseldin", link: "https://drive.google.com/file/d/1KFF2ZOuDpM_mVWQjevBK4De7hk9AbdBR/view?usp=drivesdk" },
+            { name: "Beshoy Yohana", link: "https://drive.google.com/file/d/1fi4N7fGJgBrwzICFrFRr2kzfS8Tnvqw4/view?usp=drivesdk" },
+            { name: "Kirolos Sobhi Mourad", link: "https://drive.google.com/file/d/17M531nGdPBwyyfmY1tV_uGAFUIe-CzY8/view?usp=drivesdk" },
+            { name: "Mariam Mamdouh", link: "https://drive.google.com/file/d/1LHLCBNiY3Jl_uDp9iRneG6vbsxyY9kfl/view?usp=drivesdk" },
+            { name: "Esraa Salah", link: "https://drive.google.com/file/d/1Bn0Wz538R54phSkm6iZjfw0RMcQpr_Gj/view?usp=drivesdk" },
+            { name: "Khloud Ahmed Mustafa", link: "https://drive.google.com/file/d/1I72d8585RQ9d_ZfhEwuSescIV8B4kT4X/view?usp=drivesdk" },
+            { name: "Soaad Ahmed El_domiaty", link: "https://drive.google.com/file/d/1M9AvqS_XWVpI-3alYKmrkPjUi9l0GTbA/view?usp=drivesdk" },
+            { name: "Malak Mohamed Fawzy Metwaly", link: "https://drive.google.com/file/d/12JfyXDsyL5jtZ0UaS3szr05STr4PLukY/view?usp=drivesdk" },
+            { name: "Manar Ramadan", link: "https://drive.google.com/file/d/1kQpEac05y5I9aljbv2NqZ9nMFHkj7t2z/view?usp=drivesdk" },
+            { name: "Amira Salah Kamel Shaker", link: "https://drive.google.com/file/d/1L7vXDbPoxhhzKwi_ftNVQd5EArsKXsE1/view?usp=drivesdk" },
+            { name: "Sara Adel Saeed", link: "https://drive.google.com/file/d/1vAx030ZrjqxhkPnNAwb1-9n0gWb0r3dU/view?usp=drivesdk" },
+            { name: "Asmaa Mohammed Aboseada", link: "https://drive.google.com/file/d/1YwLHxzhIY88oj1ffdqAiPpXhAzwKbT3c/view?usp=drivesdk" },
+            { name: "Mariam Mohamed Abdelazim", link: "https://drive.google.com/file/d/1w7wucxQWqNY0EyanDcGrARhaE8BLiXBw/view?usp=drivesdk" },
+            { name: "Hala Makram", link: "https://drive.google.com/file/d/1LcqtCQ9zwbpEevRPoYMkHOp5SsxsZ6YD/view?usp=drivesdk" },
+            { name: "Engielia Elsabah Lamy", link: "https://drive.google.com/file/d/1E1x6HxkWSR331GEFTKg0jFF-6IXTrFPG/view?usp=drivesdk" },
+            { name: "Kerolos Akmal", link: "https://drive.google.com/file/d/1Fhh_mMXjlPvartWSmtD0XJZbKldvTXUu/view?usp=drivesdk" },
+            { name: "Nada Abdo Abdo Abdelhaleem", link: "https://drive.google.com/file/d/1ixIWm5eqaEPGdfzMw_xPKoTKFsilnWTn/view?usp=drivesdk" },
+            { name: "Ganna Anter", link: "https://drive.google.com/file/d/1T_-_dkeW1f3YBsodsLAQ3XZtkAXGYO9J/view?usp=drivesdk" },
+            { name: "Nouran Ahmed Gaber", link: "https://drive.google.com/file/d/1W8gSx1xf29GRql4dLQ_Y3qXtkCmgLjAx/view?usp=drivesdk" },
+            { name: "Mariam Mohamed Zaki", link: "https://drive.google.com/file/d/1WtsgjJWyG6DSy-3Yoi1v1lphYjwII-eK/view?usp=drivesdk" },
+            { name: "Nayra Alaa Attia", link: "https://drive.google.com/file/d/1yem5jKkH7HUbSP2T8NGdb7zecete--iN/view?usp=drivesdk" },
+            { name: "Roba Ehab Mohamed", link: "https://drive.google.com/file/d/1JBfALt2GAkjc0p_pONx79AbeEGQ2T_gu/view?usp=drivesdk" },
+            { name: "Heba Ahmed Abd El Azim", link: "https://drive.google.com/file/d/1t-jlrooLA_qUfl1trRmLvSZNKCCi5rgO/view?usp=drivesdk" },
+            { name: "Yousef Ayman Yousef", link: "https://drive.google.com/file/d/1hrrtOxEreFKFLaWFpl32q-YecOuMwEFc/view?usp=drivesdk" },
+            { name: "Mahmoud Hassan Mohamed Alsoudy", link: "https://drive.google.com/file/d/1Iwa3XW7-uGuN0Wm-D5uZdOFmfzLYpNQm/view?usp=drivesdk" },
+            { name: "Rowaida Ashraf Abd Elmageed", link: "https://drive.google.com/file/d/1Gg6SaNwvzFX-AmE990jGZIIImazxFrop/view?usp=drivesdk" },
+            { name: "Alzahraa Gharib Hamdullah", link: "https://drive.google.com/file/d/1fMWXmGelLMrxQKJwJbuexNHuu_GGAKxK/view?usp=drivesdk" },
+            { name: "Yasmein Emadeldein", link: "https://drive.google.com/file/d/1IwmZz1SZ26GTmqAScn-eth_P7eFgOvRR/view?usp=drivesdk" },
+            { name: "Maram Magdy", link: "https://drive.google.com/file/d/1NUfQ99Y6ftuAzK72h-ev2dCt6uo6qHWe/view?usp=drivesdk" },
+            { name: "Martina Magdy Farouk", link: "https://drive.google.com/file/d/1dj5dTw6xzhBmIJQnA5IArN0avKd_v5RB/view?usp=drivesdk" },
+            { name: "Shahd Ahmed Mohamed", link: "https://drive.google.com/file/d/1998-Bnt3jnydqsLon0k_t0G2XMOuqtDZ/view?usp=drivesdk" },
+            { name: "Menna Ahmed", link: "https://drive.google.com/file/d/1cDdyleGEJlfbAuyLVtDDAoAphUP_Rm9S/view?usp=drivesdk" },
+            { name: "Ahmed Salah Mohamed", link: "https://drive.google.com/file/d/1jRPWeLQDg-OHat7opCQXuT_y1WStaywc/view?usp=drivesdk" },
+            { name: "Rahma Saadawy Farouk", link: "https://drive.google.com/file/d/1lLvFAz2CwwEULSeTv67zqd3yy9lBMS5x/view?usp=drivesdk" },
+            { name: "Omnia Ahmed Mahmoud Abdrabou", link: "https://drive.google.com/file/d/1O1HXiV9bH-v_89cAz38Ar4okmXtUrKWn/view?usp=drivesdk" },
+            { name: "Marvel Raafat Makar", link: "https://drive.google.com/file/d/1cra5-KurzkC-vVZNuKD6q5afCCWZ6CmK/view?usp=drivesdk" },
+            { name: "Aya Saad Hamouda", link: "https://drive.google.com/file/d/1McNqX2rNVp0mPltl1QzGWI2aQ_a_c4zt/view?usp=drivesdk" },
+            { name: "Engy Abdel-raouf Oun", link: "https://drive.google.com/file/d/15Yf5oazzNHa-C8bjy2W0r0jfBvyPvjme/view?usp=drivesdk" },
+            { name: "Ahmed Mohamed Elmenofy", link: "https://drive.google.com/file/d/1bfwZxWiyxkxv07_u_lMBtgvn2r1gu0FX/view?usp=drivesdk" },
+            { name: "Rasm Nazieh Abdeltawab", link: "https://drive.google.com/file/d/1gEgDtxrH7WYNQlJ-05uF4NkMZOihdNw5/view?usp=drivesdk" },
+            { name: "Rahma Mohamed Saad", link: "https://drive.google.com/file/d/1aP3kBIZVKklwjxytJ_fBowdHqPsniJTr/view?usp=drivesdk" },
+            { name: "Eman Hatem Al Sharie Rashad Juma", link: "https://drive.google.com/file/d/1Mr0piBKu_swcqMUK0CnWTFzkB8PFXV_4/view?usp=drivesdk" },
+            { name: "Mohammed Awad Abulfadl", link: "https://drive.google.com/file/d/19IaMIvF6fqbP97phk99gQFJtAXNMn0yz/view?usp=drivesdk" },
+            { name: "Mariam Mahmoud Elshorbagy", link: "https://drive.google.com/file/d/19lqYFhyShcGUZkB7Q6952vlwxSV7TvaD/view?usp=drivesdk" },
+            { name: "Ahmed Mostafa Kamel", link: "https://drive.google.com/file/d/1yjPxAJD8p_ESCP-LBnDQIIYVS7JmJy-8/view?usp=drivesdk" },
+            { name: "Omar Ahmed Mohamed", link: "https://drive.google.com/file/d/1uIUDJCu44c-Q8fXoE8M_isF0MOWjosWU/view?usp=drivesdk" },
+            { name: "Aya Fathi Elsayed Zaghloul", link: "https://drive.google.com/file/d/141qF7lv5BWJeQpdXHfS9o_a8hwQ0eN9o/view?usp=drivesdk" },
+            { name: "Wafik Mostafa Wafik", link: "https://drive.google.com/file/d/1XsCumDWvygaI4YtgncEK9Xvaxu__kffi/view?usp=drivesdk" },
+            { name: "Aalaa Abd-elbasset Sharnoby Fahmy", link: "https://drive.google.com/file/d/1yRTqYepxL29geUoeGFXAGNK-VsCrlAz3/view?usp=drivesdk" },
+            { name: "Solara Hassan Othman", link: "https://drive.google.com/file/d/10S4BohGHOPPWraIIo043Foh5w14PP_Uq/view?usp=drivesdk" },
+            { name: "Nada Anwar", link: "https://drive.google.com/file/d/1313jG8hrijWySdWdkNAZwBa4gNgQJ_O6/view?usp=drivesdk" },
+            { name: "Batool Mohammed", link: "https://drive.google.com/file/d/1KaxmrqcIytTIm-fkawNiO0roJCd4G8Yi/view?usp=drivesdk" },
+            { name: "Mariam Ahmed Hassan", link: "https://drive.google.com/file/d/10bfBaRVoaf1owl8U9u4jA4gdGji6Px8e/view?usp=drivesdk" },
+            { name: "Daniella", link: "https://drive.google.com/file/d/1DvaA7io5alc9a8i-bocq60LE9SICxgj_/view?usp=drivesdk" },
+            { name: "Rahaf Yaser Mohamed", link: "https://drive.google.com/file/d/1PRgGmLLG68Y4p1mIQu3_Urne2dKlDxm9/view?usp=drivesdk" },
+            { name: "Mai Mohamed Fawzy", link: "https://drive.google.com/file/d/1mV7A2-CQ6M0n4DOu7k8GCkyzYZfkb4_L/view?usp=drivesdk" },
+            { name: "Shadwa Waleed Ismail", link: "https://drive.google.com/file/d/1KsMEI8_fv9RukoCfUEK40ndslTAgNVt6/view?usp=drivesdk" },
+            { name: "Mahmoud Ramadan", link: "https://drive.google.com/file/d/1gyCdPBIzsorT6GP6lW9i9HYJCBSj_Jn-/view?usp=drivesdk" },
+            { name: "Norhan Hany Abo Elmagd", link: "https://drive.google.com/file/d/1vGQsyF19RdCpF8SJZYJLXwOXzfQBYuOr/view?usp=drivesdk" },
+            { name: "Kareem Mohamed Seif", link: "https://drive.google.com/file/d/1aGULGk-uwsytujv_ENM7yl1MiaaPGbu_/view?usp=drivesdk" },
+            { name: "Nourhan Mahmoud Eweda", link: "https://drive.google.com/file/d/1QF_XdOz9qAGsyXaSceqHDw5Krw5-73Qu/view?usp=drivesdk" },
+            { name: "Mona Ahmed", link: "https://drive.google.com/file/d/1qXrlQq9PkLHuRE67EM6USk3G_wRkX6yv/view?usp=drivesdk" },
+            { name: "Aya Muhammad Abu Salem", link: "https://drive.google.com/file/d/12sddGDy3pMMSLSQImi1EOuQ3ExRVZPRK/view?usp=drivesdk" },
+            { name: "Mujtaba Hayder Abed", link: "https://drive.google.com/file/d/1vPC_R6bIuSngZb3bQNosOQrqSKQzEYYN/view?usp=drivesdk" },
+            { name: "Aml Mokhtar", link: "https://drive.google.com/file/d/1qJT0NmDDYVvzYseEtjCXI7ieDYdFTNjv/view?usp=drivesdk" },
+            { name: "Ziad Mohamed Ahmed Sayed", link: "https://drive.google.com/file/d/1DCVXiPMUZP69deKw4kfBNkU7CYIkuqfG/view?usp=drivesdk" }
+        ];
+        // ===================================================================
+
+        const searchForm = document.getElementById('certificate-search-form');
+        const nameInput = document.getElementById('name-input');
+        const resultsContainer = document.getElementById('results-container');
+
+        function normalizeText(text) {
+            // Normalizes for easier searching (case-insensitive, trims whitespace)
+            return text.toLowerCase().trim();
+        }
+
+        searchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const query = nameInput.value.trim();
+            if (!query) return;
+
+            const normalizedQuery = normalizeText(query);
+            const results = certificateData.filter(item => normalizeText(item.name).includes(normalizedQuery));
+            displayResults(results, query);
+        });
+
+        function displayResults(results, query) {
+            resultsContainer.innerHTML = '';
+            if (results.length > 0) {
+                const resultMessage = document.createElement('p');
+                resultMessage.className = 'result-message';
+                resultMessage.style.marginBottom = '1.5rem';
+                resultMessage.textContent = `تم العثور على ${results.length} نتيجة مطابقة للبحث عن "${query}":`;
+                resultsContainer.appendChild(resultMessage);
+
+                results.forEach(result => {
+                    const linkElement = document.createElement('a');
+                    linkElement.href = result.link;
+                    linkElement.target = '_blank';
+                    linkElement.rel = 'noopener noreferrer';
+                    linkElement.className = 'certificate-link';
+                    linkElement.innerHTML = `<i class="fas fa-award"></i> <span>تحميل شهادة: ${result.name}</span>`;
+                    resultsContainer.appendChild(linkElement);
+                });
+            } else {
+                resultsContainer.innerHTML = `<p class="result-message">عفواً، لم يتم العثور على شهادة تطابق البحث عن "${query}". يرجى التأكد من كتابة الاسم بشكل صحيح.</p>`;
+            }
+        }
+    });
+    </script>
+</body>
+</html>
