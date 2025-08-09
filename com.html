@@ -69,7 +69,13 @@
 </head>
 <body>
 
-    <nav class="navbar" id="navbar"><div class="container"><a href="#" class="navbar-brand">Pharma<span>Schemes</span></a></div></nav>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <!-- == MODIFICATION START: Added the requested link to the brand/logo == -->
+            <a href="https://pharmaschemes.github.io/psplatforms/com" class="navbar-brand">Pharma<span>Schemes</span></a>
+            <!-- == MODIFICATION END == -->
+        </div>
+    </nav>
 
     <main class="main-content">
         <div class="container">
@@ -90,9 +96,6 @@
     <script>
     document.addEventListener('DOMContentLoaded', () => {
 
-        // ===================================================================
-        // ==              قائمة البيانات (الأسماء والروابط)                ==
-        // ===================================================================
         const certificateData = [
             { name: "Yasmeen Mostafa", link: "https://drive.google.com/file/d/1eFuLIqWgS_qnQ_cVCuLk2hwmP4nGT2iU/view?usp=drivesdk" },
             { name: "Logina Ahmed Soliman Rizk Yakoot", link: "https://drive.google.com/file/d/1kzutTj7JwNdMzcUY06lQzBIFL4Vx4zRH/view?usp=drivesdk" },
@@ -617,7 +620,6 @@
         const resultsContainer = document.getElementById('results-container');
 
         function normalizeText(text) {
-            // Normalizes for easier searching (case-insensitive, trims whitespace)
             return text.toLowerCase().trim();
         }
 
